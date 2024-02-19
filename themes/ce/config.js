@@ -3,9 +3,9 @@
  */
 const CONFIG = {
   // 菜单配置
-  MENU_SEARCH: true, // 显示搜索
+  CE_MENU_SEARCH: true, // 显示搜索
 
-  POST_LIST_COVER: true // 列表显示文章封面
+  CE_POST_LIST_COVER: true // 列表显示文章封面
 
 }
 export default CONFIG
