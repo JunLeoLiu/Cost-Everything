@@ -1,13 +1,13 @@
 const CONFIG = {
 
-  NEXT_HOME_BANNER: true, // 首页是否显示大图及标语 [true,false]
+  NEXT_HOME_BANNER: false, // 首页是否显示大图及标语 [true,false]
   NEXT_HOME_BANNER_STRINGS: ['Hi，我是一个程序员', 'Hi，我是一个打工人', 'Hi，我是一个干饭人', '欢迎来到我的博客🎉'], // 首页大图标语文字
 
   NEXT_NAV_TYPE: 'normal', // ['fixed','autoCollapse','normal'] 分别是固定屏幕顶部并始终显示、固定屏幕顶部且滚动时隐藏，不固定屏幕顶部
 
-  NEXT_POST_LIST_COVER: false, // 文章列表显示封面图
+  NEXT_POST_LIST_COVER: true, // 文章列表显示封面图
   NEXT_POST_LIST_PREVIEW: true, // 显示文章预览
-  NEXT_POST_LIST_SUMMARY: false, // 显示用户自定义摘要，有预览时优先只展示预览
+  NEXT_POST_LIST_SUMMARY: true, // 显示用户自定义摘要，有预览时优先只展示预览
 
   NEXT_POST_HEADER_IMAGE_VISIBLE: false, // 文章详情页是否显示封面图
 
