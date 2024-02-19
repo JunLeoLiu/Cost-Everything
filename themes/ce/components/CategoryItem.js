@@ -1,18 +1,20 @@
 import Link from 'next/link'
 
-export default function CategoryItem ({ selected, category, categoryCount }) {
+/**
+ * 文章分类
+ * @param {*} param0
+ * @returns
+ */
+export default function CategoryItem({ category }) {
   return (
-    <Link
-      href={`/category/${category}`}
-      passHref
-      className={(selected
-        ? 'hover:text-white dark:hover:text-white bg-green-600 text-white '
-        : 'dark:text-green-400 text-gray-500 hover:text-white dark:hover:text-white hover:bg-green-600') +
-      ' flex text-sm items-center duration-300 cursor-pointer py-1 font-light px-2 whitespace-nowrap'}>
-
-      <div><i className={`mr-2 fas ${selected ? 'fa-folder-open' : 'fa-folder'}`} />{category} {categoryCount && `(${categoryCount})`}
-      </div>
-
-    </Link>
-  );
+        <Link
+            key={category.name}
+            href={`/category/${category.name}`}
+            passHref
+            legacyBehavior>
+            <div className={'hover:text-black dark:hover:text-white dark:text-gray-300 dark:hover:bg-gray-600 px-5 cursor-pointer py-2 hover:bg-gray-100'}>
+                <i className='mr-4 fas fa-folder' />{category.name}({category.count})
+            </div>
+        </Link>
+  )
 }

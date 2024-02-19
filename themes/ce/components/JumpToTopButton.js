@@ -1,3 +1,4 @@
+import { useGlobal } from '@/lib/global'
 
 /**
  * 跳转到网页顶部
@@ -7,18 +8,11 @@
  * @returns {JSX.Element}
  * @constructor
  */
-const JumpToTopButton = ({ showPercent = false, percent, className }) => {
-  return (
-          <div
-              id="jump-to-top"
-              data-aos="fade-up"
-              data-aos-duration="300"
-              data-aos-once="false"
-              data-aos-anchor-placement="top-center"
-              className='fixed xl:right-80 right-2 mr-10 bottom-24 z-20'>
-              <i className='fas fa-chevron-up cursor-pointer p-2 rounded-full border bg-white dark:bg-hexo-black-gray' onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }) }} />
-          </div>
-  )
+const JumpToTopButton = () => {
+  const { locale } = useGlobal()
+  return <div title={locale.POST.TOP} className='cursor-pointer p-2 text-center' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+    ><i className='fas fa-angle-up text-2xl' />
+    </div>
 }
 
 export default JumpToTopButton
