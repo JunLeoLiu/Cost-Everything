@@ -7,7 +7,7 @@ import { checkContainHttp, sliceUrlFromHttp } from '@/lib/utils'
 import NotionIcon from '@/components/NotionIcon'
 
 const BlogPostCard = ({ post }) => {
-  const showPageCover = siteConfig('EXAMPLE_POST_LIST_COVER', null, CONFIG) && post?.pageCoverThumbnail
+  const showPageCover = siteConfig('CE_POST_LIST_COVER', null, CONFIG) && post?.pageCoverThumbnail
   const url = checkContainHttp(post.slug) ? sliceUrlFromHttp(post.slug) : `${siteConfig('SUB_PATH', '')}/${post.slug}`
 
   return <article className={`${showPageCover ? 'flex md:flex-row flex-col-reverse' : ''} replace mb-12 `}>

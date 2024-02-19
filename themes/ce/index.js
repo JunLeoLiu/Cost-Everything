@@ -62,7 +62,7 @@ const LayoutBase = props => {
   //   }, [onLoading])
 
   return (
-        <div id='theme-example' className='dark:text-gray-300  bg-white dark:bg-black'>
+        <div id='theme-ce' className='dark:text-gray-300  bg-white dark:bg-black'>
 
             <Style/>
 

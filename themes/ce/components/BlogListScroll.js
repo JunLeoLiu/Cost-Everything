@@ -35,7 +35,7 @@ export const BlogListScroll = props => {
       handleGetMore()
     }
   }, 500))
-  const showPageCover = siteConfig('EXAMPLE_POST_LIST_COVER', null, CONFIG)
+  const showPageCover = siteConfig('CE_POST_LIST_COVER', null, CONFIG)
 
   useEffect(() => {
     window.addEventListener('scroll', scrollTrigger)
