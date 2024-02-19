@@ -8,7 +8,7 @@ const CONFIG = {
   CE_MENU_ARCHIVE: false, // 显示归档
   CE_MENU_SEARCH: false, // 显示搜索
 
-  CE_POST_LIST_COVER: false // 列表显示文章封面
+  CE_POST_LIST_COVER: true // 列表显示文章封面
 
 }
 export default CONFIG
