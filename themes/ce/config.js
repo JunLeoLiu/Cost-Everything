@@ -5,7 +5,7 @@ const CONFIG = {
   GITBOOK_AUTO_SORT: process.env.NEXT_PUBLIC_GITBOOK_AUTO_SORT || false, // 是否自动按分类名 归组排序文章；自动归组可能会打乱您Notion中的文章顺序
 
   // 菜单
-  GITBOOK_MENU_CATEGORY: true, // 显示分类
+  GITBOOK_MENU_CATEGORY: false, // 显示分类
   GITBOOK_BOOK_MENU_TAG: false, // 显示标签
   GITBOOK_MENU_ARCHIVE: false, // 显示归档
   GITBOOK_MENU_SEARCH: false, // 显示搜索
