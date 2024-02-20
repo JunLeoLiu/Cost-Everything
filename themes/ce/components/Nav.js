@@ -33,7 +33,7 @@ export const Nav = (props) => {
   }
 
   return (
-        <nav className="w-full bg-white md:pt-0 px-6 relative z-20 border-t border-b border-gray-light dark:border-hexo-black-gray dark:bg-black">
+        <nav className="w-full bg-white md:pt-0 px-6 relative z-20 border-t border-b border-gray-light dark:border-hexo-black-gray dark:bg-black" style={{ position: 'fixed', top: 0 }}>
             <div className="container mx-auto max-w-4xl md:flex justify-right items-center text-sm md:text-md md:justify-start">
                 <ul className="w-full text-center md:text-left flex flex-wrap justify-center items-stretch md:justify-start md:items-start">
                     {links.map((link, index) => <MenuItemDrop key={index} link={link} />)}
