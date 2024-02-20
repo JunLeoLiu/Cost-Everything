@@ -34,88 +34,82 @@ import { siteConfig } from '@/lib/config'
  * @returns {JSX.Element}
  * @constructor
  */
-const LayoutBase = props => {
-  const { children } = props
-  const { onLoading, fullWidth } = useGlobal()
-  const router = useRouter()
-  const { category, tag } = props
+const LayoutBase = (props) => {
+  const { children } = props;
+  const { onLoading, fullWidth } = useGlobal();
+  const router = useRouter();
+  const { category, tag } = props;
+
   // 顶部如果是按照分类或标签查看文章列表，列表顶部嵌入一个横幅
   // 如果是搜索，则列表顶部嵌入 搜索框
-  let slotTop = null
+  let slotTop = null;
   if (category) {
-    slotTop = <div className='pb-12'><i className="mr-1 fas fa-folder-open" />{category}</div>
+    slotTop = <div className='pb-12'><i className="mr-1 fas fa-folder-open" />{category}</div>;
   } else if (tag) {
-    slotTop = <div className='pb-12'>#{tag}</div>
+    slotTop = <div className='pb-12'>#{tag}</div>;
   } else if (props.slotTop) {
-    slotTop = props.slotTop
+    slotTop = props.slotTop;
   } else if (router.route === '/search') {
     // 嵌入一个搜索框在顶部
-    slotTop = <div className='pb-12'><SearchInput {...props} /></div>
+    slotTop = <div className='pb-12'><SearchInput {...props} /></div>;
   }
 
-  // 增加一个状态以触发 Transition 组件的动画
-  //   const [showTransition, setShowTransition] = useState(true)
-  //   useEffect(() => {
-  //     // 当 location 或 children 发生变化时，触发动画
-  //     setShowTransition(false)
-  //     setTimeout(() => setShowTransition(true), 5)
-  //   }, [onLoading])
-
   return (
-        <div id='theme-ce' className='dark:text-gray-300  bg-white dark:bg-black'>
+    <div id='theme-ce' className='dark:text-gray-300 bg-white dark:bg-black'>
 
-            <Style/>
+      <Style/>
 
-            {/* 页头 */}
-            <Header {...props} />
+      {/* 页头和菜单 */}
+      <div id='header-nav' className='mb-8'>
+        <Header {...props} />
+        <Nav {...props} />
+      </div>
 
-            {/* 菜单 */}
-            <Nav {...props} />
+      {/* 主体 */}
+      <div id='container-inner' className="w-full relative z-10">
 
-            {/* 主体 */}
-            <div id='container-inner' className="w-full relative z-10">
+        {/* 标题栏 */}
+        {fullWidth ? null : <Title {...props} />}
 
-                {/* 标题栏 */}
-                {fullWidth ? null : <Title {...props} />}
+        <div id='container-wrapper' className={(JSON.parse(siteConfig('LAYOUT_SIDEBAR_REVERSE')) ? 'flex-row-reverse' : '') + 'relative container mx-auto justify-center md:flex items-start py-8 px-2'}>
 
-                <div id='container-wrapper' className={(JSON.parse(siteConfig('LAYOUT_SIDEBAR_REVERSE')) ? 'flex-row-reverse' : '') + 'relative container mx-auto justify-center md:flex items-start py-8 px-2'}>
+          {/* 内容 */}
+          <div className={`w-full ${fullWidth ? '' : 'max-w-3xl'} xl:px-14 lg:px-4`}>
+            <Transition
+              show={!onLoading}
+              appear={true}
+              enter="transition ease-in-out duration-700 transform order-first"
+              enterFrom="opacity-0 translate-y-16"
+              enterTo="opacity-100"
+              leave="transition ease-in-out duration-300 transform"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 -translate-y-16"
+              unmount={false}
+            >
+              {/* 嵌入模块 */}
+              {slotTop}
+              {children}
+            </Transition>
+          </div>
 
-                    {/* 内容 */}
-                    <div className={`w-full ${fullWidth ? '' : 'max-w-3xl'} xl:px-14 lg:px-4`}>
-                        <Transition
-                            show={!onLoading}
-                            appear={true}
-                            enter="transition ease-in-out duration-700 transform order-first"
-                            enterFrom="opacity-0 translate-y-16"
-                            enterTo="opacity-100"
-                            leave="transition ease-in-out duration-300 transform"
-                            leaveFrom="opacity-100 translate-y-0"
-                            leaveTo="opacity-0 -translate-y-16"
-                            unmount={false}
-                        >
-                            {/* 嵌入模块 */}
-                            {slotTop}
-                            {children}
-                        </Transition>
-                    </div>
+          {/* 侧边栏 */}
+          {!fullWidth && <SideBar {...props} />}
 
-                    {/* 侧边栏 */}
-                    {!fullWidth && <SideBar {...props} />}
-
-                </div>
-
-            </div>
-
-            {/* 页脚 */}
-            <Footer {...props} />
-
-            {/* 回顶按钮 */}
-            <div className='fixed right-4 bottom-4 z-10'>
-                <JumpToTopButton />
-            </div>
         </div>
-  )
-}
+
+      </div>
+
+      {/* 页脚 */}
+      <Footer {...props} />
+
+      {/* 回顶按钮 */}
+      <div className='fixed right-4 bottom-4 z-10'>
+        <JumpToTopButton />
+      </div>
+    </div>
+  );
+};
+
 
 /**
  * 首页
