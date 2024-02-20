@@ -128,32 +128,34 @@ const TopNav = props => {
         )}
     </>
 
-  return (<div id='top-nav' className='z-40'>
-        <SearchDrawer cRef={searchDrawer} slot={searchDrawerSlot} />
+return (
+  <div id='top-nav' className='z-40 fixed top-0 w-full'>
+    <SearchDrawer cRef={searchDrawer} slot={searchDrawerSlot} />
 
-        {/* 导航栏 */}
-        <div id='sticky-nav' style={{ backdropFilter: 'blur(3px)' }} className={'top-0 duration-300 transition-all  shadow-none fixed bg-none dark:bg-hexo-black-gray dark:text-gray-200 text-black w-full z-20 transform border-transparent dark:border-transparent'}>
-            <div className='w-full flex justify-between items-center px-4 py-2'>
-                <div className='flex'>
-                    <Logo {...props} />
-                </div>
-
-                {/* 右侧功能 */}
-                <div className='mr-1 flex justify-end items-center '>
-                    <div className='hidden lg:flex'> <MenuListTop {...props} /></div>
-                    <div onClick={toggleMenuOpen} className='w-8 justify-center items-center h-8 cursor-pointer flex lg:hidden'>
-                        {isOpen ? <i className='fas fa-times' /> : <i className='fas fa-bars' />}
-                    </div>
-                    {showSearchButton && <SearchButton />}
-                </div>
-            </div>
+    {/* 导航栏 */}
+    <div id='sticky-nav' style={{ backdropFilter: 'blur(3px)' }} className={'duration-300 transition-all shadow-none bg-none dark:bg-hexo-black-gray dark:text-gray-200 text-black w-full z-20 border-transparent dark:border-transparent'}>
+      <div className='w-full flex justify-between items-center px-4 py-2'>
+        <div className='flex'>
+          <Logo {...props} />
         </div>
 
-        {/* 折叠侧边栏 */}
-        <SideBarDrawer isOpen={isOpen} onClose={toggleSideBarClose}>
-            <SideBar {...props} />
-        </SideBarDrawer>
-    </div>)
+        {/* 右侧功能 */}
+        <div className='mr-1 flex justify-end items-center '>
+          <div className='hidden lg:flex'> <MenuListTop {...props} /></div>
+          <div onClick={toggleMenuOpen} className='w-8 justify-center items-center h-8 cursor-pointer flex lg:hidden'>
+            {isOpen ? <i className='fas fa-times' /> : <i className='fas fa-bars' />}
+          </div>
+          {showSearchButton && <SearchButton />}
+        </div>
+      </div>
+    </div>
+
+    {/* 折叠侧边栏 */}
+    <SideBarDrawer isOpen={isOpen} onClose={toggleSideBarClose}>
+      <SideBar {...props} />
+    </SideBarDrawer>
+  </div>
+)
 }
 
 export default TopNav
