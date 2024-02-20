@@ -129,7 +129,7 @@ const TopNav = props => {
     </>
 
 return (
-  <div id='top-nav' className='z-40 fixed top-0 w-full'>
+  <div id='top-nav' className='z-1 fixed top-0 w-full'>
     <SearchDrawer cRef={searchDrawer} slot={searchDrawerSlot} />
 
     {/* 导航栏 */}
