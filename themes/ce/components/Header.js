@@ -8,7 +8,7 @@ import { siteConfig } from '@/lib/config'
 export const Header = (props) => {
   return (
       <header className="w-full px-6 bg-white  dark:bg-black relative z-10">
-            <div className="container mx-auto max-w-4xl md:flex justify-between items-center">
+            <div className="container mx-auto max-w-4xl md:flex justify-center items-center">
                 <Link
                     href='/'
                     className="py-6 w-full text-center md:text-left md:w-auto text-gray-dark no-underline flex justify-center items-center">
