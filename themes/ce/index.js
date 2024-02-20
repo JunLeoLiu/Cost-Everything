@@ -164,6 +164,34 @@ const Layout404 = (props) => {
 }
 
 /**
+ * 搜索页
+ * @param {*} props
+ * @returns
+ */
+const LayoutSearch = props => {
+  const { keyword } = props
+  const router = useRouter()
+  useEffect(() => {
+    if (isBrowser) {
+      // 高亮搜索到的结果
+      const container = document.getElementById('posts-wrapper')
+      if (keyword && container) {
+        replaceSearchResult({
+          doms: container,
+          search: keyword,
+          target: {
+            element: 'span',
+            className: 'text-red-500 border-b border-dashed'
+          }
+        })
+      }
+    }
+  }, [router])
+
+  return <LayoutPostList {...props} />
+}
+
+/**
  * 归档列表
  * @param {*} props
  * @returns 按照日期将文章分组排序
