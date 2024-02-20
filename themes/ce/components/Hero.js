@@ -58,7 +58,7 @@ const Hero = props => {
 
             <div className="text-white absolute bottom-100 flex flex-col h-full items-center justify-center w-full ">
                 {/* 站点标题 */}
-                <div className='font-black text-4xl md:text-5xl shadow-text'>{siteConfig('TITLE')}</div>
+                <div className='font-black text-4xl md:text-5xl shadow-text' style={{ bottom: '-20px' }}>{siteConfig('TITLE')}</div>
                 {/* 站点欢迎语 */}
                 <div className='mt-2 h-12 items-center text-center font-medium shadow-text text-lg'>
                     <span id='typed' />
