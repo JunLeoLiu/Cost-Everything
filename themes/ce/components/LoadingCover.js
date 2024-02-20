@@ -1,8 +1,8 @@
-
-export default function LoadingCover() {
-  return <div id='cover-loading' className={'z-50 opacity-50  pointer-events-none transition-all duration-300'}>
- <div className='w-full h-screen flex justify-center items-center'>
-     <i className="fa-solid fa-spinner text-2xl text-black dark:text-white animate-spin">  </i>
- </div>
+export default function LoadingCover () {
+  return (<div id="loading-cover" className={'md:-mt-20 flex-grow dark:text-white text-black animate__animated animate__fadeIn flex flex-col justify-center z-50 w-full h-screen container mx-auto'}>
+  <div className="mx-auto">
+    <i className="fas fa-spinner animate-spin"/>
+  </div>
 </div>
+  )
 }
