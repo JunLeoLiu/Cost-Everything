@@ -1,8 +1,10 @@
+// import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Typed from 'typed.js'
 import CONFIG from '../config'
 import NavButtonGroup from './NavButtonGroup'
 import { useGlobal } from '@/lib/global'
+import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
 
 let wrapperTop = 0
@@ -71,6 +73,9 @@ const Hero = props => {
                     <i className='opacity-70 animate-bounce fas fa-angle-down' />
                 </div>
             </div>
+
+            <LazyImage id='header-cover' src={siteInfo?.pageCover}
+                className={`header-cover w-full h-screen object-cover object-center ${siteConfig('HEXO_HOME_NAV_BACKGROUND_IMG_FIXED', null, CONFIG) ? 'fixed' : ''}`} />
 
         </header>
   )
