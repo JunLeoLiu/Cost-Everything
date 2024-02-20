@@ -84,7 +84,7 @@ const TopNav = props => {
       nav && nav.classList.replace('top-0', '-top-20')
       windowTop = scrollS
     } else {
-      nav && nav.classList.replace('-top-0', 'top-20')
+      nav && nav.classList.replace('-top-20', 'top-0')
       windowTop = scrollS
     }
   }, throttleMs)
