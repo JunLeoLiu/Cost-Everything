@@ -8,10 +8,10 @@ import { siteConfig } from '@/lib/config'
 export const Header = (props) => {
   return (
       <header className="w-full px-6 bg-white dark:bg-black relative z-999999">
-            <div className="container mx-auto max-w-4xl md:flex justify-center items-center">
+            <div className="container mx-auto max-w-4xl md:flex justify-left items-center">
                 <Link
                     href='/'
-                    className="py-2 px-6 w-full text-center md:text-left md:w-auto text-gray-dark no-underline flex justify-center items-center text-3xl font-bold">
+                    className="py-2 px-6 w-full text-center md:text-left md:w-auto text-gray-dark no-underline flex justify-center items-center text-2xl font-bold">
 
                     {siteConfig('TITLE')}
                 </Link>
