@@ -133,7 +133,7 @@ return (
     <SearchDrawer cRef={searchDrawer} slot={searchDrawerSlot} />
 
     {/* 导航栏 */}
-    <div id='sticky-nav' style={{ backdropFilter: 'blur(3px)' }} className={'duration-300 transition-all shadow-none bg-transparent dark:bg-transparent dark:text-gray-200 text-black w-full z-20 border-transparent dark:border-transparent'}>
+    <div id='sticky-nav' style={{ backdropFilter: 'blur(0px)' }} className={'duration-300 transition-all shadow-none bg-transparent dark:bg-transparent dark:text-gray-200 text-black w-full z-20 border-transparent dark:border-transparent'}>
       <div className='w-full flex justify-between items-center px-4 py-2'>
         <div className='flex'>
           <Logo {...props} />
