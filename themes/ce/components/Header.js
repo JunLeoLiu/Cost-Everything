@@ -11,7 +11,7 @@ export const Header = (props) => {
             <div className="container mx-auto max-w-4xl md:flex justify-center items-center">
                 <Link
                     href='/'
-                    className="py-6 w-full text-center md:text-left md:w-auto text-gray-dark text-lg no-underline flex justify-center items-center">
+                    className="py-3 w-full text-center md:text-left md:w-auto text-gray-dark text-lg-bold no-underline flex justify-center items-center">
 
                     {siteConfig('TITLE')}
                 </Link>
