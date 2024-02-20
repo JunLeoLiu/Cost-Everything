@@ -133,10 +133,14 @@ return (
     <SearchDrawer cRef={searchDrawer} slot={searchDrawerSlot} />
 
     {/* 导航栏 */}
-    <div id='sticky-nav' style={{ backdropFilter: 'blur(0px)' }} className={'duration-300 transition-all shadow-none bg-transparent dark:bg-transparent dark:text-gray-200 text-black w-full z-20 border-transparent dark:border-transparent'}>
+    <div id='sticky-nav' style={{ backdropFilter: 'blur(3px)' }} className={'duration-300 transition-all shadow-none bg-transparent dark:bg-transparent dark:text-gray-200 text-black w-full z-20 border-transparent dark:border-transparent'}>
       <div className='w-full flex justify-between items-center px-4 py-2'>
-        <div className='flex'>
-          <Logo {...props} />
+        <div className='flex items-center'>
+          {/* 添加品牌 logo */}
+          <img src='/avatar.png' alt='Brand Logo' className='h-8 w-auto' />
+
+          {/* 品牌名称 */}
+          <span className='ml-2 text-xl font-bold'>Brand Name</span>
         </div>
 
         {/* 右侧功能 */}
@@ -155,6 +159,7 @@ return (
     </SideBarDrawer>
   </div>
 )
+
 
 }
 
