@@ -145,7 +145,6 @@ return (
           <div onClick={toggleMenuOpen} className='w-8 justify-center items-center h-8 cursor-pointer flex lg:hidden'>
             {isOpen ? <i className='fas fa-times' /> : <i className='fas fa-bars' />}
           </div>
-          {showSearchButton && <SearchButton />}
         </div>
       </div>
     </div>
@@ -156,6 +155,7 @@ return (
     </SideBarDrawer>
   </div>
 )
+
 }
 
 export default TopNav
