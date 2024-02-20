@@ -7,7 +7,7 @@ import { siteConfig } from '@/lib/config'
  */
 export const Header = (props) => {
   return (
-      <header className="w-full px-6 bg-white dark:bg-black relative z-10 top-0 left-0 fixed">
+      <header className="w-full px-6 bg-white  dark:bg-black sticky relative z-10">
             <div className="container mx-auto max-w-4xl md:flex justify-center items-center">
                 <Link
                     href='/'
