@@ -128,41 +128,36 @@ const TopNav = props => {
         )}
     </>
 
-return (
-  <div id='top-nav' className='z-40 fixed top-0 w-full'>
-    <SearchDrawer cRef={searchDrawer} slot={searchDrawerSlot} />
+  return (
+    <div id='top-nav' className='z-40 fixed top-0 w-full'>
+      <SearchDrawer cRef={searchDrawer} slot={searchDrawerSlot} />
 
-    {/* 导航栏 */}
-    <div id='sticky-nav' style={{ backdropFilter: 'none' }} className={'duration-300 transition-all shadow-none bg-transparent dark:bg-transparent dark:text-gray-200 text-black w-full z-20 border-none dark:border-none'}>
-      <div className='w-full flex justify-between items-center px-4 py-2'>
-        <div className='flex'>
-          <a href="/"> {/* 添加的链接 */}
-            <img src='avatar.png' alt='Your Logo' className='w-10 h-10 mr-2' /> {/* 添加的图片 */}
-            <span className="font-bold">Your Logo</span> {/* 修改的文字 */}
-          </a>
-          <Logo {...props} />
-        </div>
+      {/* 导航栏 */}
+      <div id='sticky-nav' style={{ backdropFilter: 'none' }} className={'duration-300 transition-all shadow-none bg-transparent dark:bg-transparent dark:text-gray-200 text-black w-full z-20 border-none dark:border-none sm:bg-white sm:shadow-lg sm:dark:bg-transparent'}>
+        <div className='w-full flex justify-between items-center px-4 py-2'>
+          <div className='flex'>
+            <a href="/"> {/* 添加的链接 */}
+              <img src='avatar.png' alt='Your Logo' className='w-10 h-10 mr-2' /> {/* 添加的图片 */}
+            </a>
+            <Logo {...props} />
+          </div>
 
-        {/* 右侧功能 */}
-        <div className='mr-1 flex justify-end items-center '>
-          <div className='hidden lg:flex'> <MenuListTop {...props} /></div>
-          <div onClick={toggleMenuOpen} className='w-8 justify-center items-center h-8 cursor-pointer flex lg:hidden'>
-            {isOpen ? <i className='fas fa-times' /> : <i className='fas fa-bars' />}
+          {/* 右侧功能 */}
+          <div className='mr-1 flex justify-end items-center '>
+            <div className='hidden lg:flex'> <MenuListTop {...props} /></div>
+            <div onClick={toggleMenuOpen} className='w-8 justify-center items-center h-8 cursor-pointer flex lg:hidden'>
+              {isOpen ? <i className='fas fa-times' /> : <i className='fas fa-bars' />}
+            </div>
           </div>
         </div>
       </div>
+
+      {/* 折叠侧边栏 */}
+      <SideBarDrawer isOpen={isOpen} onClose={toggleSideBarClose}>
+        <SideBar {...props} />
+      </SideBarDrawer>
     </div>
-
-    {/* 折叠侧边栏 */}
-    <SideBarDrawer isOpen={isOpen} onClose={toggleSideBarClose}>
-      <SideBar {...props} />
-    </SideBarDrawer>
-  </div>
-)
-
-
-
-
+  )
 }
 
 export default TopNav
