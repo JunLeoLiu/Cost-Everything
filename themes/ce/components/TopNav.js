@@ -136,9 +136,7 @@ return (
     <div id='sticky-nav' style={{ backdropFilter: 'none' }} className={'duration-300 transition-all shadow-none bg-transparent dark:bg-transparent dark:text-gray-200 text-black w-full z-20 border-none dark:border-none'}>
       <div className='w-full flex justify-between items-center px-4 py-2'>
         <div className='flex'>
-          <a href="/"> {/* 添加的链接 */}
-            <img src='avatar.png' alt='Your Logo' className='w-10 h-10 mr-2' /> {/* 添加的图片 */}
-          </a>
+          <img src='avatar.png' alt='Your Logo' className='w-10 h-10 mr-2' /> {/* 添加的图片 */}
           <Logo {...props} />
         </div>
 
@@ -158,6 +156,7 @@ return (
     </SideBarDrawer>
   </div>
 )
+
 
 
 }
