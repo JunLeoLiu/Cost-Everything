@@ -134,14 +134,9 @@ return (
 
     {/* 导航栏 */}
     <div id='sticky-nav' style={{ backdropFilter: 'blur(3px)' }} className={'duration-300 transition-all shadow-none bg-transparent dark:bg-transparent dark:text-gray-200 text-black w-full z-20 border-transparent dark:border-transparent'}>
-      <div className='w-full flex justify-center items-center px-4 py-2'>
+      <div className='w-full flex justify-between items-center px-4 py-2'>
         <div className='flex'>
           <Logo {...props} />
-        </div>
-
-        {/* 搜索功能区域 */}
-        <div className='flex-grow text-center'>
-          <input type='text' placeholder='Search...' className='border border-gray-300 px-2 py-1 rounded-md focus:outline-none focus:border-indigo-500' />
         </div>
 
         {/* 右侧功能 */}
@@ -160,7 +155,6 @@ return (
     </SideBarDrawer>
   </div>
 )
-
 
 }
 
