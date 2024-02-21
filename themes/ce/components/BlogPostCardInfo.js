@@ -25,7 +25,7 @@ export const BlogPostCardInfo = ({ post, showPreview, showPageCover, showSummary
                         className={`line-clamp-2 replace cursor-pointer text-2xl ${showPreview ? 'text-center' : ''
                             } leading-tight font-normal text-gray-600 dark:text-gray-100 hover:text-indigo-700 dark:hover:text-indigo-400`}>
 
-                        <NotionIcon icon={post.pageIcon} /><span>{post.title}</span>
+                        <NotionIcon icon={post.pageIcon} /><span className='menu-link '>{post.title}</span>
 
                     </Link>
                 </h2>
@@ -34,7 +34,7 @@ export const BlogPostCardInfo = ({ post, showPreview, showPageCover, showSummary
                 <div className={`flex mt-2 items-center ${showPreview ? 'justify-center' : 'justify-start'} flex-wrap dark:text-gray-500 text-gray-400 `}>
                     {/* 作者信息 */}
                     {post.author && (
-                    <span className="cursor-pointer font-light text-sm menu-link hover:text-indigo-700 dark:hover:text-indigo-400 transform mr-4">
+                    <span className="cursor-pointer font-light text-sm mr-4">
                         <i className="mr-1 far fa-user" />
                         {post.author}
                     </span>
