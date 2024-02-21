@@ -135,7 +135,10 @@ const TopNav = props => {
         <div id='sticky-nav' style={{ backdropFilter: 'blur(3px)' }} className={'top-0 duration-300 transition-all  shadow-none fixed bg-none dark:bg-hexo-black-gray dark:text-gray-200 text-black w-full z-20 transform border-transparent dark:border-transparent'}>
             <div className='w-full flex justify-between items-center px-4 py-2'>
                 <div className='flex'>
-                    <Logo {...props} />
+                  <a href="/"> {/* 添加的链接 */}
+                    <img src='avatar.png' alt='Your Logo' className='w-10 h-10 mr-2' /> {/* 添加的图片 */}
+                  </a>
+                  <Logo {...props} />
                 </div>
 
                 {/* 右侧功能 */}
@@ -149,10 +152,10 @@ const TopNav = props => {
             </div>
         </div>
 
-        {/* 折叠侧边栏 */}
-        <SideBarDrawer isOpen={isOpen} onClose={toggleSideBarClose}>
-            <SideBar {...props} />
-        </SideBarDrawer>
+    {/* 折叠侧边栏 */}
+    <SideBarDrawer isOpen={isOpen} onClose={toggleSideBarClose}>
+      <SideBar {...props} />
+    </SideBarDrawer>
     </div>)
 }
 
