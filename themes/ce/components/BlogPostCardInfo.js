@@ -34,7 +34,7 @@ export const BlogPostCardInfo = ({ post, showPreview, showPageCover, showSummary
                 <div className={`flex mt-2 items-center ${showPreview ? 'justify-center' : 'justify-start'} flex-wrap dark:text-gray-500 text-gray-400 `}>
                     {/* 作者信息 */}
                     {post.author && (
-                    <span className="font-light text-sm mr-4">
+                    <span className="font-light text-sm mr-3">
                         <i className="mr-1 far fa-user" />
                         {post.author}
                     </span>
