@@ -42,7 +42,7 @@ export const BlogPostCardInfo = ({ post, showPreview, showPageCover, showSummary
 
                     {/* 分类信息 */}
                     {post?.category && (
-                    <Link href={`/category/${post.category}`} passHref className="cursor-pointer font-light text-sm menu-link hover:text-indigo-700 dark:hover:text-indigo-400 transform">
+                    <Link href={`/category/${post.category}`} passHref className="cursor-pointer font-light text-sm mr-3 menu-link hover:text-indigo-700 dark:hover:text-indigo-400 transform">
                         <i className="mr-1 far fa-folder" />
                         {post.category}
                     </Link>
