@@ -30,6 +30,16 @@ export const BlogPostCardInfo = ({ post, showPreview, showPageCover, showSummary
                     </Link>
                 </h2>
 
+                {/* 作者信息 */}
+                {post.author && (
+                <div className={`flex mt-2 items-center ${showPreview ? 'justify-center' : 'justify-start'} flex-wrap dark:text-gray-500 text-gray-400 `}>
+                    <span className="cursor-pointer font-light text-sm menu-link hover:text-indigo-700 dark:hover:text-indigo-400 transform">
+                    <i className="mr-1 far fa-user" />
+                    {post.author}
+                    </span>
+                </div>
+                )}
+                
                 {/* 分类 */}
                 { post?.category && <div
                     className={`flex mt-2 items-center ${showPreview ? 'justify-center' : 'justify-start'
