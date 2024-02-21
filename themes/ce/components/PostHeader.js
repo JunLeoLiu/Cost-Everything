@@ -12,7 +12,7 @@ export default function PostHeader({ post }) {
   }
 
   return (
-    <header className="py-10">
+    <header className="py-6">
       <div className='mt-10'>
         {/* 文章Title */}
         <div className="leading-snug font-bold xs:text-4xl sm:text-4xl md:text-5xl md:leading-snug text-4xl shadow-text-md flex justify-center text-center text-black">
