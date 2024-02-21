@@ -18,7 +18,7 @@ export default function ArticleAdjacent ({ prev, next }) {
         passHref
         className='py-1  cursor-pointer hover:underline justify-start items-center dark:text-white flex w-full h-full duration-200'>
 
-        <span className="mr-1">上一篇</span> <i className='mr-1 fas fa-angle-left' />{prev.title}
+        <i className='mr-1 fas fa-angle-left' />{prev.title}<span className="mr-1">上一篇</span>
 
       </Link>
       <Link
