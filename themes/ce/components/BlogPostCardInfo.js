@@ -1,5 +1,6 @@
 import NotionPage from '@/components/NotionPage'
 import Link from 'next/link'
+import TagItemMini from './TagItemMini'
 import TwikooCommentCount from '@/components/TwikooCommentCount'
 import { siteConfig } from '@/lib/config'
 import { formatDateFmt } from '@/lib/formatDate'
@@ -28,15 +29,19 @@ export const BlogPostCardInfo = ({ post, showPreview, showPageCover, showSummary
             </Link>
           </h2>
 
-          {/* 作者信息和分类 */}
+          {/* 作者信息、分类信息和日期标签 */}
           <div className={`flex mt-2 items-center ${showPreview ? 'justify-center' : 'justify-start'} flex-wrap dark:text-gray-500 text-gray-400 `}>
             {/* 日期标签 */}
             <div className="text-gray-400 justify-between flex">
               {/* 日期 */}
-              <span className="font-light text-sm mr-3">
+              <Link
+                href={`/archive#${formatDateFmt(post?.publishDate, 'yyyy-MM')}`}
+                passHref
+                className="font-light menu-link cursor-pointer text-sm leading-4 mr-3"
+              >
                 <i className="far fa-calendar-alt mr-1" />
                 {post?.publishDay || post.lastEditedDay}
-              </span>
+              </Link>
             </div>
 
             {/* 作者信息 */}
@@ -54,6 +59,15 @@ export const BlogPostCardInfo = ({ post, showPreview, showPageCover, showSummary
                 {post.category}
               </Link>
             )}
+
+            {/* 标签 */}
+            <div className="md:flex-nowrap flex-wrap md:justify-start inline-block">
+              <div>
+                {post.tagItems?.map(tag => (
+                  <TagItemMini key={tag.name} tag={tag} />
+                ))}
+              </div>
+            </div>
 
             {/* 评论数 */}
             <TwikooCommentCount className='text-sm hover:text-indigo-700 dark:hover:text-indigo-400 ml-auto' post={post} />
