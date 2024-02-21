@@ -82,15 +82,10 @@ export const BlogPostCardInfo = ({ post, showPreview, showPageCover, showSummary
          {/* 日期标签 */}
          <div className="text-gray-400 justify-between flex">
             {/* 日期 */}
-            <Link
-                href={`/archive#${formatDateFmt(post?.publishDate, 'yyyy-MM')}`}
-                passHref
-                className="font-light menu-link cursor-pointer text-sm leading-4 mr-3">
-
+            <span className="font-light menu-link cursor-pointer text-sm leading-4 mr-3">
                 <i className="far fa-calendar-alt mr-1" />
                 {post?.publishDay || post.lastEditedDay}
-
-            </Link>
+            </span>
 
             <div className="md:flex-nowrap flex-wrap md:justify-start inline-block">
                 <div>
