@@ -36,7 +36,7 @@ export const BlogPostCardInfo = ({ post, showPreview, showPageCover, showSummary
                     {post.author && (
                     <span className="cursor-pointer font-light text-sm mr-4">
                         <i className="mr-1 far fa-user" />
-                        {post.author}
+                        {post.category}
                     </span>
                     )}
 
