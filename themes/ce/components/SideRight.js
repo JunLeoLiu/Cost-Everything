@@ -66,6 +66,11 @@ export default function SideRight(props) {
           </Card>
       )}
 
+      {siteConfig('HEXO_WIDGET_LATEST_POSTS', null, CONFIG) && latestPosts && latestPosts.length > 0 && <Card>
+        <LatestPostsGroup {...props} />
+      </Card>}
+
+      <Announcement post={notice}/>
 
       {siteConfig('COMMENT_WALINE_SERVER_URL') && siteConfig('COMMENT_WALINE_RECENT') && <HexoRecentComments/>}
 
