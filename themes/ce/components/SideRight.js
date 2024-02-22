@@ -1,8 +1,5 @@
 import Card from './Card'
-import CategoryGroup from './CategoryGroup'
-import LatestPostsGroup from './LatestPostsGroup'
-import TagGroups from './TagGroups'
-import Catalog from './Catalog'
+import Link from 'next/link'
 import { InfoCard } from './InfoCard'
 import { AnalyticsCard } from './AnalyticsCard'
 import CONFIG from '../config'
@@ -11,7 +8,6 @@ import Announcement from './Announcement'
 import { useGlobal } from '@/lib/global'
 import Live2D from '@/components/Live2D'
 import { siteConfig } from '@/lib/config'
-import Link from 'next/link'
 
 const HexoRecentComments = dynamic(() => import('./HexoRecentComments'))
 const FaceBookPage = dynamic(
@@ -34,7 +30,7 @@ const FaceBookPage = dynamic(
  */
 export default function SideRight(props) {
   const {
-    post, currentCategory, categories, latestPosts, tags,
+    post, currentCategory, categoryOptions, latestPosts, tags,
     currentTag, showCategory=1, showTag, rightAreaSlot, notice, className
   } = props
 
@@ -55,10 +51,25 @@ export default function SideRight(props) {
           <div className='ml-2 mb-1 '>
             <i className='fas fa-th' /> {locale.COMMON.CATEGORY}
           </div>
-          <CategoryGroup
-            currentCategory={currentCategory}
-            categories={categories}
-          />
+          <div id="category-list" className="duration-200 flex flex-wrap mx-8">
+            {categoryOptions?.map(category => (
+              <Link
+                key={category.name}
+                href={`/category/${category.name}`}
+                passHref
+                legacyBehavior
+              >
+                <div
+                  className={
+                    'duration-300 dark:hover:text-white rounded-lg px-5 cursor-pointer py-2 hover:bg-indigo-400 hover:text-white'
+                  }
+                >
+                  <i className="mr-4 fas fa-folder" />
+                  {category.name}({category.count})
+                </div>
+              </Link>
+            ))}
+          </div>
         </Card>
       )}
 
