@@ -11,6 +11,7 @@ import Announcement from './Announcement'
 import { useGlobal } from '@/lib/global'
 import Live2D from '@/components/Live2D'
 import { siteConfig } from '@/lib/config'
+import Link from 'next/link'
 
 const HexoRecentComments = dynamic(() => import('./HexoRecentComments'))
 const FaceBookPage = dynamic(
@@ -34,7 +35,7 @@ const FaceBookPage = dynamic(
 export default function SideRight(props) {
   const {
     post, currentCategory, categories, latestPosts, tags,
-    currentTag, showCategory=1, showTag=1, rightAreaSlot, notice, className
+    currentTag, showCategory=1, showTag, rightAreaSlot, notice, className
   } = props
 
   const { locale } = useGlobal()
@@ -53,6 +54,12 @@ export default function SideRight(props) {
         <Card>
           <div className='ml-2 mb-1 '>
             <i className='fas fa-th' /> {locale.COMMON.CATEGORY}
+            <Link
+              href={'/category'}
+              passHref
+              className='text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:underline cursor-pointer'>
+              {locale.COMMON.MORE} <i className='fas fa-angle-double-right' />
+          </Link>
           </div>
           <CategoryGroup
             currentCategory={currentCategory}
