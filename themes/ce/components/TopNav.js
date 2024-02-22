@@ -136,8 +136,8 @@ const TopNav = props => {
             <div className='w-full flex justify-between items-center px-4 py-2'>
                 <div className='flex'>
                   <a href="/"> {/* 添加的链接 */}
-                    <div className="icon-container" style={{height: "10rem", border: "solid 2px #333", borderRadius: "5px", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                      <span style={{fontSize: "7rem", fontWeight: "bold", color: "#000"}}>CE</span> {/* 图标中央的大写字母 */}
+                    <div className="icon-container" style={{height: "3rem", width:"4rem", border: "solid 3px #333", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                      <span style={{fontSize: "2.5rem", fontWeight: "bold", color: "#000"}}>CE</span> {/* 图标中央的大写字母 */}
                     </div>
                   </a>
                 </div>
