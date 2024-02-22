@@ -30,7 +30,7 @@ export default function PostHeader({ post, siteInfo }) {
           <NotionIcon icon={post.pageIcon} className='text-4xl mx-1' />{post.title}
         </div>
 
-        <LazyImage priority={true} src={headerImage} className='w-full h-80 object-cover object-center md:w-1/3'/>
+        <LazyImage priority={true} src={headerImage} className='w-full h-30 object-cover object-center md:w-1/3'/>
       </header>
 
       <section className="flex-wrap shadow-text-md flex text-sm justify-center mt-4 text-white dark:text-gray-400 font-light leading-8">
