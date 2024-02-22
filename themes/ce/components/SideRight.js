@@ -11,7 +11,6 @@ import Announcement from './Announcement'
 import { useGlobal } from '@/lib/global'
 import Live2D from '@/components/Live2D'
 import { siteConfig } from '@/lib/config'
-import Link from 'next/link'
 
 const HexoRecentComments = dynamic(() => import('./HexoRecentComments'))
 const FaceBookPage = dynamic(
@@ -50,31 +49,15 @@ export default function SideRight(props) {
       <InfoCard {...props} />
       {siteConfig('HEXO_WIDGET_ANALYTICS', null, CONFIG) && <AnalyticsCard {...props} />}
 
-      {true && (
+      {showCategory && (
         <Card>
           <div className='ml-2 mb-1 '>
             <i className='fas fa-th' /> {locale.COMMON.CATEGORY}
           </div>
-          <div id="category-list" className="duration-200 flex flex-wrap mx-8">
-                {categoryOptions?.map(category => {
-                  return (
-                      <Link
-                          key={category.name}
-                          href={`/category/${category.name}`}
-                          passHref
-                          legacyBehavior>
-                          <div
-                              className={
-                                  ' duration-300 dark:hover:text-white rounded-lg px-5 cursor-pointer py-2 hover:bg-indigo-400 hover:text-white'
-                              }
-                          >
-                              <i className="mr-4 fas fa-folder" />
-                              {category.name}({category.count})
-                          </div>
-                      </Link>
-                  )
-                })}
-            </div>
+          <CategoryGroup
+            currentCategory={currentCategory}
+            categories={categories}
+          />
         </Card>
       )}
 
