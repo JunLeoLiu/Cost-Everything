@@ -6,7 +6,7 @@ import { isBrowser } from '@/lib/utils'
  * @returns {JSX.Element}
  * @constructor
  */
-const Progress = ({ targetRef, showPercent = true }) => {
+const Progress = ({ targetRef, showPercent = false }) => { // false不西安市进度条，true显示进度条
   const currentRef = targetRef?.current || targetRef
   const [percent, changePercent] = useState(0)
   const scrollListener = () => {
