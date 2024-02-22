@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react'
 import { isBrowser } from '@/lib/utils'
 
 /**
- * 页面右侧阅读进度条
+ * 顶部页面阅读进度条
  * @returns {JSX.Element}
  * @constructor
  */
-const Progress = ({ targetRef, showPercent = false }) => {
+const Progress = ({ targetRef, showPercent = false }) => { // false不显示进度%，true显示进度%
   const currentRef = targetRef?.current || targetRef
   const [percent, changePercent] = useState(0)
-
   const scrollListener = () => {
     const target = currentRef || (isBrowser && document.getElementById('article-wrapper'))
     if (target) {
@@ -29,19 +28,15 @@ const Progress = ({ targetRef, showPercent = false }) => {
   }, [])
 
   return (
-    <div className="fixed top-0 right-0 h-full flex flex-col items-center justify-center mr-4">
-      <div className="w-4 h-full bg-transparent"></div>
-      <div className="w-4 h-64 bg-gray-700 rounded-sm flex flex-col-reverse">
-        <div
-          className="h-full bg-indigo-600 duration-200 rounded-sm"
-          style={{ height: `${percent}%` }}
-        >
-          {showPercent && (
-            <div className="text-center text-white text-xs">{percent}%</div>
-          )}
-        </div>
+    <div className="h-4 w-full shadow-2xl bg-gray-700 rounded-sm">
+      <div
+        className="h-4 bg-indigo-600 duration-200 rounded-sm"
+        style={{ width: `${percent}%` }}
+      >
+        {showPercent && (
+          <div className="text-right text-white text-xs">{percent}%</div>
+        )}
       </div>
-      <div className="w-4 h-full bg-transparent"></div>
     </div>
   )
 }
