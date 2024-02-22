@@ -2,7 +2,6 @@ import { useRouter } from 'next/router'
 import Card from './Card'
 import SocialButton from './SocialButton'
 import MenuGroupCard from './MenuGroupCard'
-import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
 
 /**
@@ -13,21 +12,18 @@ import { siteConfig } from '@/lib/config'
 export function InfoCard(props) {
   const { className, siteInfo } = props
   const router = useRouter()
+
   return (
-        <Card className={className}>
-            <div
-                className='justify-center items-center flex py-6 dark:text-gray-100  transform duration-200 cursor-pointer'
-                onClick={() => {
-                  router.push('/')
-                }}
-            >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <LazyImage src={siteInfo?.icon} className='rounded-full' width={120} alt={siteConfig('AUTHOR')} />
-            </div>
-            <div className='font-medium text-center text-xl pb-4'>{siteConfig('AUTHOR')}</div>
-            <div className='text-sm text-center'>{siteConfig('BIO')}</div>
-            <MenuGroupCard {...props} />
-            <SocialButton />
-        </Card>
+    <Card className={className}>
+      <a href="/" className="icon-wrapper" style={{ height: '3.3rem', width: '3.8rem', backgroundColor: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ height: '2.8rem', width: '3.3rem', border: 'solid 3px #333', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <span style={{ fontFamily: 'Helvetica Neue', fontSize: '2rem', fontWeight: 'bold', color: '#000' }}>CE</span>
+        </div>
+      </a>
+      <div className='font-medium text-center text-xl pb-4'>{siteConfig('AUTHOR')}</div>
+      <div className='text-sm text-center'>{siteConfig('BIO')}</div>
+      <MenuGroupCard {...props} />
+      <SocialButton />
+    </Card>
   )
 }
