@@ -135,10 +135,15 @@ const TopNav = props => {
         <div id='sticky-nav' style={{ backdropFilter: 'blur(3px)' }} className={'top-0 duration-300 transition-all  shadow-none fixed bg-none dark:bg-hexo-black-gray dark:text-gray-200 text-black w-full z-20 transform border-transparent dark:border-transparent'}>
             <div className='w-full flex justify-between items-center px-4 py-2'>
                 <div className='flex'>
-                  <a href="/"> {/* 添加的链接 */}
-                    <img src='avatar.png' alt='Your Logo' className='w-10 h-10 mr-2' /> {/* 添加的图片 */}
-                  </a>
-                </div>
+                    <a href="/"> {/* 添加的链接 */}
+                      <div className='icon-container'>
+                        <svg className='icon' viewBox="0 0 100 100">
+                          <rect x="10" y="10" width="80" height="80" fill="none" stroke="gray" strokeWidth="4" />
+                          <text x="50" y="60" textAnchor="middle" dominantBaseline="middle" fontSize="70" fontWeight="bold" fill="black">CE</text>
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
 
                 {/* 右侧功能 */}
                 <div className='mr-1 flex justify-end items-center '>
