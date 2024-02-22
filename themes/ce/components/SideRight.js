@@ -54,12 +54,6 @@ export default function SideRight(props) {
         <Card>
           <div className='ml-2 mb-1 '>
             <i className='fas fa-th' /> {locale.COMMON.CATEGORY}
-            <Link
-              href={'/category'}
-              passHref
-              className='text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:underline cursor-pointer'>
-              {locale.COMMON.MORE} <i className='fas fa-angle-double-right' />
-          </Link>
           </div>
           <CategoryGroup
             currentCategory={currentCategory}
