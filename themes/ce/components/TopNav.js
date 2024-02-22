@@ -138,7 +138,7 @@ const TopNav = props => {
                     <a href="/"> {/* 添加的链接 */}
                         <div className="icon-wrapper" style={{height: '3.3rem', width:'3.8rem', backgroundColor: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <div style={{ height: '2.8rem', width:'3.3rem',border: 'solid 3px #333',display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <span style={{ fontSize: '2rem', fontWeight: 'bold', color: '#000'}}>CE</span>
+                                <span style={{ fontFamily: 'Helvetica Neue',fontSize: '2rem', fontWeight: 'bold', color: '#000'}}>CE</span>
                             </div>
                         </div>
                     </a>
