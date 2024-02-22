@@ -64,11 +64,11 @@ const SearchInput = props => {
   }
 
   return (
-    <div className={'flex w-full rounded-lg ' + className}>
+    <div className={'flex items-center justify-center w-full rounded-lg ' + className}>
       <input
         ref={searchInputRef}
         type="text"
-        style={{ height: '45px' }}
+        style={{ height: '45px', textAlign: 'center' }} // 添加居中样式
         className={
           'outline-none w-full h-10 text-lg rounded-lg transition focus:shadow-lg dark:text-gray-300 font-light leading-10 text-black bg-gray-150 dark:bg-gray-300'
         }
@@ -82,7 +82,7 @@ const SearchInput = props => {
       />
 
       <div
-        className="-ml-8 cursor-pointer  float-right items-center justify-center py-2"
+        className="cursor-pointer items-center justify-center py-2" // 移除 float-right
         onClick={handleSearch}
       >
         <i
@@ -93,7 +93,7 @@ const SearchInput = props => {
       </div>
 
       {showClean && (
-        <div className="-ml-12 cursor-pointer float-right items-center justify-center py-2">
+        <div className="cursor-pointer items-center justify-center py-2"> // 移除 float-right
           <i
             className="hover:text-black transform duration-200 text-gray-400 dark:text-gray-300 cursor-pointer fas fa-times"
             onClick={cleanSearch}
