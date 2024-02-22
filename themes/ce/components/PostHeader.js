@@ -48,8 +48,8 @@ export default function PostHeader({ post, siteInfo }) {
             </div>
 
             {JSON.parse(siteConfig('ANALYTICS_BUSUANZI_ENABLE')) && <div className="busuanzi_container_page_pv font-light mr-2">
-              <span className="mr-2 busuanzi_value_page_pv" />
               {locale.COMMON.VIEWS}
+              <span className="mr-2 busuanzi_value_page_pv" />
             </div>}
           </section>
         </div>
