@@ -68,6 +68,7 @@ const SearchInput = props => {
       <input
         ref={searchInputRef}
         type="text"
+        style={{ height: '200px' }}
         className={
           'outline-none w-full h-10 text-sm pl-20 rounded-lg transition focus:shadow-lg dark:text-gray-300 font-light leading-10 text-black bg-gray-150 dark:bg-gray-300'
         }

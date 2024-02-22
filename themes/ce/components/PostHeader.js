@@ -20,39 +20,37 @@ export default function PostHeader({ post, siteInfo }) {
   const headerImage = post?.pageCover ? post.pageCover : siteInfo?.pageCover
 
   return (
-    <div id="header" className="w-full relative md:flex-shrink-0 z-10" >
-      <header
-        id='article-header-cover'
-        className="bg-black bg-opacity-70 flex w-full py-10 items-center"
-      >
+    <div id="header" className="w-full h-48 relative md:flex-shrink-0 z-10" >
+      <LazyImage priority={true} src={headerImage} className='w-full h-full object-cover object-center absolute top-0'/>
 
-        {/* 将封面图放在标题右侧 */}
-        <LazyImage priority={true} src={headerImage} className='w-32 h-32 object-cover object-center mr-4'/>
+      <header id='article-header-cover'
+            className="bg-black bg-opacity-70 absolute top-0 w-full h-48 py-10 flex justify-center items-center ">
 
         <div className='mt-10'>
           {/* 文章Title */}
-          <div className="leading-snug font-bold text-4xl md:text-5xl shadow-text-md text-white">
+          <div className="leading-snug font-bold xs:text-4xl sm:text-4xl md:text-5xl md:leading-snug text-4xl shadow-text-md flex justify-center text-center text-white">
             <NotionIcon icon={post.pageIcon} className='text-4xl mx-1' />{post.title}
           </div>
 
-          <section className="flex-wrap shadow-text-md flex text-sm justify-start mt-4 text-white dark:text-gray-400 font-light leading-8">
-            <div className='flex dark:text-gray-200 text-opacity-70'>
+          <section className="flex-wrap shadow-text-md flex text-sm justify-center mt-4 text-white dark:text-gray-400 font-light leading-8">
+
+            <div className='flex justify-center dark:text-gray-200 text-opacity-70'>
               {post?.type !== 'Page' && (
-                <span className="pl-1 mr-2">
-                  {locale.COMMON.POST_TIME}: {post?.publishDay}
-                </span>
+                <>
+                  <span className="pl-1 mr-2">
+                    {locale.COMMON.POST_TIME}: {post?.publishDay}
+                  </span>
+                </>
               )}
               <div className="pl-1 mr-2">
                 {locale.COMMON.LAST_EDITED_TIME}: {post.lastEditedDay}
               </div>
             </div>
 
-            {JSON.parse(siteConfig('ANALYTICS_BUSUANZI_ENABLE')) && 
-              <div className="busuanzi_container_page_pv font-light mr-2">
-                {locale.COMMON.VIEWS}
-                <span className="mr-2 busuanzi_value_page_pv" />
-              </div>
-            }
+            {JSON.parse(siteConfig('ANALYTICS_BUSUANZI_ENABLE')) && <div className="busuanzi_container_page_pv font-light mr-2">
+              {locale.COMMON.VIEWS}
+              <span className="mr-2 busuanzi_value_page_pv" />
+            </div>}
           </section>
         </div>
       </header>
