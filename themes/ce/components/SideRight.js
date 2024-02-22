@@ -57,7 +57,7 @@ export default function SideRight(props) {
           </div>
           <CategoryGroup
             currentCategory={currentCategory}
-            categories={categoryOptions}
+            categories={categories}
           />
         </Card>
       )}
