@@ -69,7 +69,7 @@ const LayoutBase = props => {
     </>
 
   // Algolia搜索框
-  const searchModal = useRef(null)
+  const searchModal = useRef(true)
 
   return (
     <ThemeGlobalHexo.Provider value={{ searchModal }}>
