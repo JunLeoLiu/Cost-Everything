@@ -34,7 +34,7 @@ const FaceBookPage = dynamic(
 export default function SideRight(props) {
   const {
     post, currentCategory, categories, latestPosts, tags,
-    currentTag, showCategory, showTag, rightAreaSlot, notice, className
+    currentTag, showCategory=1, showTag=1, rightAreaSlot, notice, className
   } = props
 
   const { locale } = useGlobal()
