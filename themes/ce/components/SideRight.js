@@ -49,7 +49,7 @@ export default function SideRight(props) {
       <InfoCard {...props} />
       {siteConfig('HEXO_WIDGET_ANALYTICS', null, CONFIG) && <AnalyticsCard {...props} />}
 
-      {showCategory && (
+      {true && ( // 强制显示类别
         <Card>
           <div className='ml-2 mb-1 '>
             <i className='fas fa-th' /> {locale.COMMON.CATEGORY}
