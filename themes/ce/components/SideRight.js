@@ -47,25 +47,24 @@ export default function SideRight(props) {
   return (
     <div id='sideRight' className={className}>
       <InfoCard {...props} />
+      {siteConfig('HEXO_WIDGET_ANALYTICS', null, CONFIG) && <AnalyticsCard {...props} />}
 
-      {/* 分类  */}
-      {siteConfig('NEXT_RIGHT_CATEGORY_LIST', null, CONFIG) && router.asPath !== '/category' && categoryOptions && (
-          <Card>
-              <div className='text-sm px-2 flex flex-nowrap justify-between font-light'>
-                  <div className='pb-2 text-gray-600 dark:text-gray-300'><i className='mr-2 fas fa-th-list' />{locale.COMMON.CATEGORY}</div>
-                  <Link
-                      href={'/category'}
-                      passHref
-                      className='text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:underline cursor-pointer'>
-
-                      {locale.COMMON.MORE} <i className='fas fa-angle-double-right' />
-
-                  </Link>
-              </div>
-              <CategoryGroup currentCategory={currentCategory} categories={categoryOptions} />
-          </Card>
+      {showCategory && (
+        <Card>
+          <div className='ml-2 mb-1 '>
+            <i className='fas fa-th' /> {locale.COMMON.CATEGORY}
+          </div>
+          <CategoryGroup
+            currentCategory={currentCategory}
+            categories={categories}
+          />
+        </Card>
       )}
-
+      {showTag && (
+        <Card>
+          <TagGroups tags={tags} currentTag={currentTag} />
+        </Card>
+      )}
       {siteConfig('HEXO_WIDGET_LATEST_POSTS', null, CONFIG) && latestPosts && latestPosts.length > 0 && <Card>
         <LatestPostsGroup {...props} />
       </Card>}
