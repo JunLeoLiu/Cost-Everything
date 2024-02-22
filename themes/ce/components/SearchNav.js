@@ -21,7 +21,7 @@ export default function SearchNav(props) {
 
   return <>
     <div className="my-6 px-2">
-        <SearchInput cRef={cRef} {...props} style={{ height: '200px !important' }} />
+        <SearchInput cRef={cRef} {...props} />
         {/* 分类 */}
         <Card className="w-full mt-4">
             <div className="dark:text-gray-200 mb-5 mx-3">
