@@ -27,6 +27,15 @@ const FaceBookPage = dynamic(
   { ssr: false }
 )
 
+export default function SearchNav(props) {
+  const { tagOptions, categoryOptions } = props
+  const cRef = useRef(null)
+  const { locale } = useGlobal()
+  useEffect(() => {
+    // 自动聚焦到搜索框
+    cRef?.current?.focus()
+  }, [])
+
 /**
  * Hexo主题右侧栏
  * @param {*} props
