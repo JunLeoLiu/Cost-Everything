@@ -49,22 +49,32 @@ export default function SideRight(props) {
       <InfoCard {...props} />
       {siteConfig('HEXO_WIDGET_ANALYTICS', null, CONFIG) && <AnalyticsCard {...props} />}
 
-      {showCategory && (
+      {true && (
         <Card>
           <div className='ml-2 mb-1 '>
             <i className='fas fa-th' /> {locale.COMMON.CATEGORY}
           </div>
+          <Link
+              href={'/category'}
+              passHref
+              className='text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:underline cursor-pointer'>
+
+              {locale.COMMON.MORE} <i className='fas fa-angle-double-right' />
+
+          </Link>
           <CategoryGroup
             currentCategory={currentCategory}
             categories={categories}
           />
         </Card>
       )}
+
       {showTag && (
         <Card>
           <TagGroups tags={tags} currentTag={currentTag} />
         </Card>
       )}
+
       {siteConfig('HEXO_WIDGET_LATEST_POSTS', null, CONFIG) && latestPosts && latestPosts.length > 0 && <Card>
         <LatestPostsGroup {...props} />
       </Card>}
