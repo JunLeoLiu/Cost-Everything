@@ -55,10 +55,7 @@ export default function SideRight(props) {
           <div className='ml-2 mb-1 '>
             <i className='fas fa-th' /> {locale.COMMON.CATEGORY}
           </div>
-          <CategoryGroup
-            currentCategory={currentCategory}
-            categories={categories}
-          />
+          {category.name}({category.count})
         </Card>
       )}
 
