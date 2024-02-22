@@ -41,12 +41,6 @@ export default function SideRight(props) {
     return null
   }
 
-  // 计算所有文章数量之和
-  const totalPostsCount = categoryOptions.reduce((acc, category) => acc + category.count, 0)
-
-  // 构造包含“全部”类别的数组
-  const allCategoryOption = [{ name: locale.COMMON.ALL, count: totalPostsCount }, ...categoryOptions]
-
   return (
     <div id='sideRight' className={className}>
       <InfoCard {...props} />
@@ -58,10 +52,10 @@ export default function SideRight(props) {
             <i className='fas fa-th' /> {locale.COMMON.CATEGORY}
           </div>
           <div id="category-list" className="duration-200 flex flex-wrap mx-8">
-            {allCategoryOption.map(category => (
+            {categoryOptions?.map(category => (
               <Link
                 key={category.name}
-                href={category.name === locale.COMMON.ALL ? '/' : `/category/${category.name}`}
+                href={`/category/${category.name}`}
                 passHref
                 legacyBehavior
               >
