@@ -21,7 +21,7 @@ export default function PostHeader({ post, siteInfo }) {
 
   return (
     <div id="header" className="w-full relative md:flex-shrink-0 z-10 flex flex-wrap">
-      <LazyImage priority={true} src={headerImage} className='w-full h-80 object-cover object-center md:w-2/3 md:h-full'/>
+      <LazyImage priority={true} src={headerImage} className='w-full h-20 object-cover object-center md:w-2/3 md:h-full'/>
 
       <header
         id='article-header-cover'
