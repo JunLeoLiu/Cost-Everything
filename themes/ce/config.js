@@ -29,10 +29,10 @@ const CONFIG = {
   HEXO_ARTICLE_RECOMMEND: true, // 文章关联推荐
 
   HEXO_WIDGET_LATEST_POSTS: true, // 显示最新文章卡
-  HEXO_WIDGET_ANALYTICS: true, // 显示统计卡
+  HEXO_WIDGET_ANALYTICS: false, // 显示统计卡
   HEXO_WIDGET_TO_TOP: true, // 显示回到顶部
   HEXO_WIDGET_TO_COMMENT: false, // 跳到评论区
   HEXO_WIDGET_DARK_MODE: false, // 夜间模式
-  HEXO_WIDGET_TOC: false // 移动端悬浮目录
+  HEXO_WIDGET_TOC: true // 移动端悬浮目录
 }
 export default CONFIG
