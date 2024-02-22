@@ -60,7 +60,7 @@ export default function SideRight(props) {
           />
         </Card>
       )}
-      {true && (
+      {showTag && (
         <Card>
           <TagGroups tags={tags} currentTag={currentTag} />
         </Card>
