@@ -1,3 +1,26 @@
+import { useGlobal } from '@/lib/global'
+import Link from 'next/link'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import CategoryGroup from './CategoryGroup'
+import Logo from './Logo'
+import SearchDrawer from './SearchDrawer'
+import TagGroups from './TagGroups'
+import { MenuListTop } from './MenuListTop'
+import throttle from 'lodash.throttle'
+import SideBar from './SideBar'
+import SideBarDrawer from './SideBarDrawer'
+import { siteConfig } from '@/lib/config'
+import SearchButton from './SearchButton'
+import CONFIG from '../config'
+import { useRouter } from 'next/router'
+
+let windowTop = 0
+
+/**
+ * 顶部导航
+ * @param {*} param0
+ * @returns
+ */
 const TopNav = props => {
   const searchDrawer = useRef()
   const { tags, currentTag, categories, currentCategory } = props
@@ -68,82 +91,70 @@ const TopNav = props => {
   )
 
   const searchDrawerSlot = <>
-    {categories && (
-      <section className='mt-8'>
-        <div className='text-sm flex flex-nowrap justify-between font-light px-2'>
-          <div className='text-gray-600 dark:text-gray-200'><i className='mr-2 fas fa-th-list' />{locale.COMMON.CATEGORY}</div>
-          <Link
-            href={'/category'}
-            passHref
-            className='mb-3 text-gray-400 hover:text-black dark:text-gray-400 dark:hover:text-white hover:underline cursor-pointer'>
+        {categories && (
+            <section className='mt-8'>
+                <div className='text-sm flex flex-nowrap justify-between font-light px-2'>
+                    <div className='text-gray-600 dark:text-gray-200'><i className='mr-2 fas fa-th-list' />{locale.COMMON.CATEGORY}</div>
+                    <Link
+                        href={'/category'}
+                        passHref
+                        className='mb-3 text-gray-400 hover:text-black dark:text-gray-400 dark:hover:text-white hover:underline cursor-pointer'>
 
-            {locale.COMMON.MORE} <i className='fas fa-angle-double-right' />
+                        {locale.COMMON.MORE} <i className='fas fa-angle-double-right' />
 
-          </Link>
-        </div>
-        <CategoryGroup currentCategory={currentCategory} categories={categories} />
-      </section>
-    )}
+                    </Link>
+                </div>
+                <CategoryGroup currentCategory={currentCategory} categories={categories} />
+            </section>
+        )}
 
-    {tags && (
-      <section className='mt-4'>
-        <div className='text-sm py-2 px-2 flex flex-nowrap justify-between font-light dark:text-gray-200'>
-          <div className='text-gray-600 dark:text-gray-200'><i className='mr-2 fas fa-tag' />{locale.COMMON.TAGS}</div>
-          <Link
-            href={'/tag'}
-            passHref
-            className='text-gray-400 hover:text-black  dark:hover:text-white hover:underline cursor-pointer'>
+        {tags && (
+            <section className='mt-4'>
+                <div className='text-sm py-2 px-2 flex flex-nowrap justify-between font-light dark:text-gray-200'>
+                    <div className='text-gray-600 dark:text-gray-200'><i className='mr-2 fas fa-tag' />{locale.COMMON.TAGS}</div>
+                    <Link
+                        href={'/tag'}
+                        passHref
+                        className='text-gray-400 hover:text-black  dark:hover:text-white hover:underline cursor-pointer'>
 
-            {locale.COMMON.MORE} <i className='fas fa-angle-double-right' />
+                        {locale.COMMON.MORE} <i className='fas fa-angle-double-right' />
 
-          </Link>
-        </div>
-        <div className='p-2'>
-          <TagGroups tags={tags} currentTag={currentTag} />
-        </div>
-      </section>
-    )}
-  </>
+                    </Link>
+                </div>
+                <div className='p-2'>
+                    <TagGroups tags={tags} currentTag={currentTag} />
+                </div>
+            </section>
+        )}
+    </>
 
-  return (
-    <div id='top-nav' className='z-40'>
-      <SearchDrawer cRef={searchDrawer} slot={searchDrawerSlot} />
+  return (<div id='top-nav' className='z-40'>
+        <SearchDrawer cRef={searchDrawer} slot={searchDrawerSlot} />
 
-      {/* 导航栏 */}
-      <div id='sticky-nav' style={{ backdropFilter: 'blur(3px)' }} className={'top-0 duration-300 transition-all  shadow-none fixed bg-none dark:bg-hexo-black-gray dark:text-gray-200 text-black w-full z-20 transform border-transparent dark:border-transparent'}>
-        <div className='w-full flex justify-between items-center px-4 py-2'>
-          <div className='flex'>
-            {/* 左上角图标 */}
-            <div style={{
-              width: '50px',
-              height: '70%',
-              border: 'solid 2px #333333',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              fontSize: '70%',
-              fontWeight: 'bold'
-            }}>
-              CE
+        {/* 导航栏 */}
+        <div id='sticky-nav' style={{ backdropFilter: 'blur(3px)' }} className={'top-0 duration-300 transition-all  shadow-none fixed bg-none dark:bg-hexo-black-gray dark:text-gray-200 text-black w-full z-20 transform border-transparent dark:border-transparent'}>
+            <div className='w-full flex justify-between items-center px-4 py-2'>
+                <div className='flex'>
+                  <a href="/"> {/* 添加的链接 */}
+                    <img src='avatar.png' alt='Your Logo' className='w-10 h-10 mr-2' /> {/* 添加的图片 */}
+                  </a>
+                </div>
+
+                {/* 右侧功能 */}
+                <div className='mr-1 flex justify-end items-center '>
+                    <div className='hidden lg:flex'> <MenuListTop {...props} /></div>
+                    <div onClick={toggleMenuOpen} className='w-8 justify-center items-center h-8 cursor-pointer flex lg:hidden'>
+                        {isOpen ? <i className='fas fa-times' /> : <i className='fas fa-bars' />}
+                    </div>
+                </div>
             </div>
-          </div>
-
-          {/* 右侧功能 */}
-          <div className='mr-1 flex justify-end items-center '>
-            <div className='hidden lg:flex'> <MenuListTop {...props} /></div>
-            <div onClick={toggleMenuOpen} className='w-8 justify-center items-center h-8 cursor-pointer flex lg:hidden'>
-              {isOpen ? <i className='fas fa-times' /> : <i className='fas fa-bars' />}
-            </div>
-          </div>
         </div>
-      </div>
 
-      {/* 折叠侧边栏 */}
-      <SideBarDrawer isOpen={isOpen} onClose={toggleSideBarClose}>
-        <SideBar {...props} />
-      </SideBarDrawer>
-    </div>
-  )
+    {/* 折叠侧边栏 */}
+    <SideBarDrawer isOpen={isOpen} onClose={toggleSideBarClose}>
+      <SideBar {...props} />
+    </SideBarDrawer>
+    </div>)
 }
 
 export default TopNav
