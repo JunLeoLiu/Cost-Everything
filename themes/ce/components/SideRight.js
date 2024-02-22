@@ -51,14 +51,31 @@ export default function SideRight(props) {
       {siteConfig('HEXO_WIDGET_ANALYTICS', null, CONFIG) && <AnalyticsCard {...props} />}
 
       {showCategory && (
-        <Card>
-          <div className='ml-2 mb-1 '>
-            <i className='fas fa-th' /> {locale.COMMON.CATEGORY}
-          </div>
-          <CategoryGroup
-            currentCategory={currentCategory}
-            categories={categories}
-          />
+        <Card className="w-full mt-4">
+            <div className="dark:text-gray-200 mb-5 mx-3">
+                <i className="mr-4 fas fa-th" />
+                {locale.COMMON.CATEGORY}:
+            </div>
+            <div id="category-list" className="duration-200 flex flex-wrap mx-8">
+                {categoryOptions?.map(category => {
+                  return (
+                      <Link
+                          key={category.name}
+                          href={`/category/${category.name}`}
+                          passHref
+                          legacyBehavior>
+                          <div
+                              className={
+                                  ' duration-300 dark:hover:text-white rounded-lg px-5 cursor-pointer py-2 hover:bg-indigo-400 hover:text-white'
+                              }
+                          >
+                              <i className="mr-4 fas fa-folder" />
+                              {category.name}({category.count})
+                          </div>
+                      </Link>
+                  )
+                })}
+            </div>
         </Card>
       )}
 
