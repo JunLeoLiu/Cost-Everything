@@ -13,7 +13,7 @@ export default function SearchButton(props) {
   const { searchModal } = useHexoGlobal()
 
   function handleSearch() {
-    if (true) {
+    if (false) { //
       searchModal.current.openSearch()
     } else {
       router.push('/search')
