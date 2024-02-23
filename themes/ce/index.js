@@ -235,6 +235,7 @@ const LayoutSlug = props => {
                         {/* Notion文章主体 */}
                         <section className='px-5 justify-center mx-auto max-w-2xl lg:max-w-full'>
 
+                            {post.title}
                             {post && <NotionPage post={post} />}
                         </section>
 
