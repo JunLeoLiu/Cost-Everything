@@ -50,7 +50,7 @@ const Catalog = ({ toc }) => {
   }
 
   return (
-    <div className='fixed top-40 right-10 px-1 py-1'>
+    <div className='fixed top-30 right-10 px-1 py-1'>
       <div className='w-full'><i className='mr-1 fas fa-stream' />{locale.COMMON.TABLE_OF_CONTENTS}</div>
       <div className='w-full py-3'>
         <Progress />
