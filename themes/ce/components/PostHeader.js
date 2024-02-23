@@ -21,7 +21,6 @@ export default function PostHeader({ post, siteInfo }) {
 
   return (
     <div id="header" className="w-full h-30 relative md:flex-shrink-0 z-50" >
-      <LazyImage priority={true} src={headerImage} className='w-full h-full object-cover object-center absolute top-0'/>
 
       <header id='article-header-cover'
             className="bg-black bg-opacity-70 absolute top-0 w-full h-48 py-10 flex justify-center items-center ">
