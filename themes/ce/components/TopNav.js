@@ -73,9 +73,9 @@ const TopNav = props => {
     }
 
     if (scrollInHeader) {
-      nav && nav.classList.replace('text-black', 'text-white')
+      nav && nav.classList.replace('text-black', 'text-black')
     } else {
-      nav && nav.classList.replace('text-white', 'text-black')
+      nav && nav.classList.replace('text-black', 'text-black')
     }
 
     // 导航栏不在头图里，且页面向下滚动一定程度 隐藏导航栏
