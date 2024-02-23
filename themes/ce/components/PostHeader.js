@@ -22,7 +22,7 @@ export default function PostHeader({ post, siteInfo }) {
   return (
     <div id="header" className="w-full h-0 relative md:flex-shrink-0 z-50" >
       <header id='article-header-cover'
-            className="absolute top-0 w-full h-30 py-1 flex justify-center items-center ">
+            className="absolute top-0 w-full h-30 py-2 flex justify-center items-center ">
 
         <div className='mt-1'>
           {/* 文章Title */}
