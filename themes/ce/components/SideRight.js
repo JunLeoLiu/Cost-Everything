@@ -77,9 +77,7 @@ export default function SideRight(props) {
       {siteConfig('COMMENT_WALINE_SERVER_URL') && siteConfig('COMMENT_WALINE_RECENT') && <HexoRecentComments/>}
 
       <div className='sticky top-30 right-20'>
-        {post && post.toc && post.toc.length > 1 && <Card>
-          <Catalog toc={post.toc} />
-        </Card>}
+        {post && post.toc && post.toc.length > 1 && <Catalog toc={post.toc} />}
 
         {rightAreaSlot}
         <FaceBookPage/>
