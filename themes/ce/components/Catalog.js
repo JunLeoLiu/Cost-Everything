@@ -51,7 +51,7 @@ const Catalog = ({ toc }) => {
 
   return (
     <div className='fixed top-40 right-20 px-3 py-1'style={{ width: '200px' }}>
-      <div className='w-full'><i className='mr-1 fas fa-stream' />{post.title}</div>
+      <div className='w-full'><NotionIcon icon={post.pageIcon}/>{post.title}</div>
       <div className='w-full py-3'>
         <Progress />
       </div>
