@@ -61,12 +61,12 @@ const Style = () => {
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: #333;
+        background-color: #605F5F;
     }
 
     * {
         scrollbar-width:thin;
-        scrollbar-color: #333 transparent
+        scrollbar-color: #605F5F transparent
     }
     
 
