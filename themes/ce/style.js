@@ -52,7 +52,7 @@ const Style = () => {
 
     // 自定义滚动条
     ::-webkit-scrollbar {
-        width: 5px;
+        width: 8px;
         height: 7px;
     }
 
