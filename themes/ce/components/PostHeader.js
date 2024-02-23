@@ -24,13 +24,13 @@ export default function PostHeader({ post, siteInfo }) {
       <header id='article-header-cover'
             className="bg-black bg-opacity-70 absolute top-0 w-full h-30 py-4 flex justify-center items-center ">
 
-        <div className='mt-2'>
+        <div className='mt-0.5'>
           {/* 文章Title */}
-          <div className="leading-snug font-bold xs:text-4xl sm:text-4xl md:text-5xl md:leading-snug text-4xl shadow-text-md flex justify-center text-center text-white">
-            <NotionIcon icon={post.pageIcon} className='text-4xl mx-1' />{post.title}
+          <div className="leading-snug font-bold xs:text-3xl sm:text-3xl md:text-4xl md:leading-snug text-3xl shadow-text-md flex justify-center text-center text-white">
+            <NotionIcon icon={post.pageIcon} className='text-3xl mx-0.5' />{post.title}
           </div>
 
-          <section className="flex-wrap shadow-text-md flex text-sm justify-center mt-4 text-white dark:text-gray-400 font-light leading-8">
+          <section className="flex-wrap shadow-text-md flex text-sm justify-center mt-2 text-white dark:text-gray-400 font-light leading-6">
 
             <div className='flex justify-center dark:text-gray-200 text-opacity-70'>
               {post?.type !== 'Page' && (
