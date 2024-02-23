@@ -20,9 +20,9 @@ export default function PostHeader({ post, siteInfo }) {
   const headerImage = post?.pageCover ? post.pageCover : siteInfo?.pageCover
 
   return (
-    <div id="header" className="w-full h-10 relative md:flex-shrink-0 z-50" >
+    <div id="header" className="w-60 h-10 relative md:flex-shrink-0 z-50" >
       <header id='article-header-cover'
-            className="bg-black bg-opacity-70 absolute top-0 w-full h-30 py-4 flex justify-center items-center ">
+            className="bg-black bg-opacity-70 absolute top-0 w-60 h-25 py-2 flex justify-center items-center ">
 
         <div className='mt-0.5'>
           {/* 文章Title */}
