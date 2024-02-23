@@ -50,7 +50,7 @@ const Catalog = ({ toc }) => {
   }
 
   return (
-    <div className='fixed top-30 right-10 z-50 p-4'>
+    <div className='fixed top-30 right-10 px-1 py-1'>
       <div className='w-full'><i className='mr-1 fas fa-stream' />{locale.COMMON.TABLE_OF_CONTENTS}</div>
       <div className='w-full py-3'>
         <Progress />
@@ -64,8 +64,7 @@ const Catalog = ({ toc }) => {
               <a
                 key={id}
                 href={`#${id}`}
-                className={`notion-table-of-contents-item duration-300 transform font-light dark:text-gray-200
-              notion-table-of-contents-item-indent-level-${tocItem.indentLevel} `}
+                className={`notion-table-of-contents-item duration-300 transform font-light dark:text-gray-200 notion-table-of-contents-item-indent-level-${tocItem.indentLevel}`}
               >
                 <span style={{ display: 'inline-block', marginLeft: tocItem.indentLevel * 16 }}
                   className={`${activeSection === id && ' font-bold text-indigo-600'}`}
