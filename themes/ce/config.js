@@ -33,6 +33,6 @@ const CONFIG = {
   HEXO_WIDGET_TO_TOP: true, // 显示回到顶部
   HEXO_WIDGET_TO_COMMENT: false, // 跳到评论区
   HEXO_WIDGET_DARK_MODE: false, // 夜间模式
-  HEXO_WIDGET_TOC: true // 移动端悬浮目录
+  HEXO_WIDGET_TOC: false // 移动端悬浮目录
 }
 export default CONFIG
