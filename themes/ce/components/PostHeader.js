@@ -20,7 +20,7 @@ export default function PostHeader({ post, siteInfo }) {
   const headerImage = post?.pageCover ? post.pageCover : siteInfo?.pageCover
 
   return (
-    <div id="header" className="w-full h-0 relative md:flex-shrink-0 z-39" >
+    <div id="header" className="w-full h-0 relative md:flex-shrink-0 z-10" >
       <header id='article-header-cover'
             className="absolute top-0 w-full h-40 py-2 flex justify-center items-center ">
 
