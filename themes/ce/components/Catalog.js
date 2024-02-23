@@ -51,7 +51,7 @@ const Catalog = ({ toc }) => {
 
   return (
     <div className='fixed top-60 right-30 px-3 py-1'>
-      <div className='w-full'><i className='mr-1 fas fa-stream' />{locale.COMMON.TABLE_OF_CONTENTS}</div>
+      <div className='w-full'><i className='mr-1 fas fa-stream' />{post.title}</div>
       <div className='w-full py-3'>
         <Progress />
       </div>
