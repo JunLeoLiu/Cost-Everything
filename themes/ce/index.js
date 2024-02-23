@@ -229,7 +229,6 @@ const LayoutSlug = props => {
                 {lock && <ArticleLock validPassword={validPassword} />}
 
                 {!lock && <div id="article-wrapper" className="overflow-x-auto flex-grow mx-auto md:w-full md:px-5 ">
-                    {/* 文章标题 */}
                     <article itemScope itemType="https://schema.org/Movie" className="subpixel-antialiased overflow-y-hidden" >
                         {/* Notion文章主体 */}
                         <section className='px-5 justify-center mx-auto max-w-2xl lg:max-w-full'>
@@ -250,13 +249,6 @@ const LayoutSlug = props => {
                         <Comment frontMatter={post} />
                     </div>
                 </div>}
-
-                {/* 设置文章详情与文章标题之间的间距为10px */}
-                <style jsx>{`
-                  #article-wrapper {
-                    margin-top: 10px;
-                  }
-                `}</style>
             </div>
 
         </>
