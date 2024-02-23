@@ -24,7 +24,7 @@ export default function PostHeader({ post, siteInfo }) {
       <header id='article-header-cover'
             className="absolute top-0 w-full h-20 py-3 flex justify-center items-center ">
 
-        <div className='mt-2'>
+        <div className='mt-5'>
           {/* 文章Title */}
           <div className="leading-snug font-bold xs:text-3xl sm:text-3xl md:text-4xl md:leading-snug text-3xl shadow-text-md flex justify-center text-center text-black dark:text-white">
             <NotionIcon icon={post.pageIcon} className='text-3xl mx-0.5' />{post.title}
