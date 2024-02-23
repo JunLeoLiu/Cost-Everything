@@ -225,10 +225,7 @@ const LayoutSlug = props => {
 
   return (
         <>
-            {/* 文章Title */}
-            <div className="leading-snug font-bold xs:text-3xl sm:text-3xl md:text-4xl md:leading-snug text-3xl shadow-text-md flex justify-center text-center text-white">
-              <NotionIcon icon={post.pageIcon} className='text-3xl mx-0.5' />{post.title}
-            </div>
+        
             <div className="w-full lg:hover:shadow lg:border rounded-t-xl lg:rounded-xl lg:px-2 lg:py-4 bg-white dark:bg-hexo-black-gray dark:border-black article">
                 {lock && <ArticleLock validPassword={validPassword} />}
 
