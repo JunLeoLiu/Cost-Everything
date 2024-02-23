@@ -20,7 +20,7 @@ export default function PostHeader({ post, siteInfo }) {
   const headerImage = post?.pageCover ? post.pageCover : siteInfo?.pageCover
 
   return (
-    <div id="header" className="w-full h-48 fixed top-0 z-10">
+    <div id="header" className="w-full h-48 fixed top-0 z-100">
       <LazyImage priority={true} src={headerImage} className='w-full h-full object-cover object-center absolute top-0'/>
 
       <header id='article-header-cover'
