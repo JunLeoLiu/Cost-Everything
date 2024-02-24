@@ -8,7 +8,7 @@
 	.st2{font-family:'Arial-BoldMT';}
 	.st3{font-size:500px;}
 </style>
-<rect x="77" y="148" class="st0" width="737" height="566.9"/>
-<rect x="32.9" y="185.2" class="st1" width="825.2" height="492.4"/>
-<text transform="matrix(1 0 0 1 98.2145 614.2017)" class="st2 st3">CE</text>
+<rect x="77" y="62.9" class="st0" width="737" height="737"/>
+<rect x="32.9" y="173.2" class="st1" width="825.2" height="492.4"/>
+<text transform="matrix(1 0 0 1 98.2145 602.2017)" class="st2 st3">CE</text>
 </svg>
