@@ -26,9 +26,7 @@ export default function FloatDarkModeButton () {
       className={'justify-center items-center w-7 h-7 text-center transform hover:scale-105 duration-200'
       }
     >
-      <i id="darkModeButton" className={`${isDarkMode ? <FontAwesomeIcon icon="fa-light fa-house" style={{color: "#FFD43B",}} />: 'fa-light fa-moon'}`}/>
+      <i id="darkModeButton" className={`${isDarkMode ? <FontAwesomeIcon icon="fa-light fa-house" style={{color: "#000",}} />: 'fa-light fa-moon'}`}/>
     </div>
   )
 }
-
-<FontAwesomeIcon icon="fa-sharp fa-thin fa-house" style={{color: "#FFD43B",}} />
