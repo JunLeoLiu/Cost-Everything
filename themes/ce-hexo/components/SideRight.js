@@ -48,6 +48,8 @@ export default function SideRight(props) {
     <div id='sideRight' className={className}>
       <InfoCard {...props} />
       {siteConfig('HEXO_WIDGET_ANALYTICS', null, CONFIG) && <AnalyticsCard {...props} />}
+      
+      <Announcement post={notice}/>
 
       {showCategory && (
         <Card>
@@ -68,8 +70,6 @@ export default function SideRight(props) {
       {siteConfig('HEXO_WIDGET_LATEST_POSTS', null, CONFIG) && latestPosts && latestPosts.length > 0 && <Card>
         <LatestPostsGroup {...props} />
       </Card>}
-
-      <Announcement post={notice}/>
 
       {siteConfig('COMMENT_WALINE_SERVER_URL') && siteConfig('COMMENT_WALINE_RECENT') && <HexoRecentComments/>}
 
