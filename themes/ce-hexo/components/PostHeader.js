@@ -63,20 +63,11 @@ export default function PostHeader({ post, siteInfo }) {
             </div>
 
             {JSON.parse(siteConfig('ANALYTICS_BUSUANZI_ENABLE')) && <div className="busuanzi_container_page_pv font-light mr-2">
-              <span className="mr-2 busuanzi_value_page_pv" />
-              {locale.COMMON.VIEWS}
+            {locale.COMMON.VIEWS}
+            <span className="mr-2 busuanzi_value_page_pv" />
             </div>}
           </section>
-
-            <div className='mt-4 mb-1'>
-                {post.tagItems && (
-                    <div className="flex justify-center flex-nowrap overflow-x-auto">
-                        {post.tagItems.map(tag => (
-                            <TagItemMini key={tag.name} tag={tag} />
-                        ))}
-                    </div>
-                )}
-            </div>
+          
         </div>
       </header>
     </div>
