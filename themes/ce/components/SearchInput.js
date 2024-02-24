@@ -70,7 +70,7 @@ const SearchInput = props => {
         type="text"
         style={{ height: '50px' }}
         className={
-          'outline-none w-full text-sm pl-5 rounded-lg transition focus:shadow-lg dark:text-gray-300 font-light leading-10 text-black bg-gray-200 dark:bg-gray-500 text-center'
+          'outline-none w-full text-sm pl-5 rounded-lg transition focus:shadow-lg dark:text-gray-300 font-light leading-10 text-black bg-gray-150 dark:bg-gray-500 text-center'
         }
         onKeyUp={handleKeyUp}
         onCompositionStart={lockSearchInput}
