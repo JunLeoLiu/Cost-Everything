@@ -399,7 +399,6 @@ const BLOG = {
     date: process.env.NEXT_PUBLIC_NOTION_PROPERTY_DATE || 'date',
     tags: process.env.NEXT_PUBLIC_NOTION_PROPERTY_TAGS || 'tags',
     icon: process.env.NEXT_PUBLIC_NOTION_PROPERTY_ICON || 'icon'
-    authorn: process.env.NEXT_PUBLIC_NOTION_PROPERTY_AUTHOR || 'authorn' // 作者字段
   },
 
   // RSS订阅
