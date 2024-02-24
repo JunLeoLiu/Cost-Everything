@@ -13,6 +13,7 @@ import { siteConfig } from '@/lib/config'
 import SearchButton from './SearchButton'
 import CONFIG from '../config'
 import { useRouter } from 'next/router'
+import SearchInput from './SearchInput'; // Import the SearchInput component
 
 let windowTop = 0
 
@@ -135,8 +136,17 @@ const TopNav = props => {
         <div id='sticky-nav' style={{ backdropFilter: 'blur(3px)' }} className={'top-0 duration-300 transition-all  shadow-none fixed bg-none dark:bg-hexo-black-gray dark:text-gray-200 text-black w-full z-20 transform border-transparent dark:border-transparent'}>
             <div className='w-full flex justify-between items-center px-4 py-2'>
                 <div className='flex'>
-                    <Logo {...props} />
+                    <a href="/"> {/* 添加的链接 */}
+                        <div className="icon-wrapper" style={{height: '3.3rem', width:'3.8rem', backgroundColor: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <div style={{ height: '2.8rem', width:'3.3rem',border: 'solid 3px #333',display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <span style={{ fontFamily: 'Helvetica Neue',fontSize: '2rem', fontWeight: 'bold', color: '#000'}}>CE</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
+                
+                {/* SearchInput component */}
+                <SearchInput {...props} className="mx-auto" style={{ width: '60%' }}/>
 
                 {/* 右侧功能 */}
                 <div className='mr-1 flex justify-end items-center '>
