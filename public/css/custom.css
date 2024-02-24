@@ -1,6 +1,6 @@
 /* 静态文件导入 自定义样式*/
 
-#theme-ce .sideLeft hr{
+#theme-ce-next .sideLeft hr{
     opacity: .04;
 }
 .fa-info:before {
