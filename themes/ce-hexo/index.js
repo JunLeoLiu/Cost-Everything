@@ -129,6 +129,11 @@ const LayoutBase = props => {
             {/* 悬浮菜单 */}
             <RightFloatArea floatSlot={floatSlot} />
 
+            {/* 右上角悬浮 */}
+            <div ref={floatButtonGroup} className='right-8 Top-30 lg:right-10 fixed justify-end z-20 '>
+                <Catalog />
+            </div>
+
             {/* 全文搜索 */}
             <AlgoliaSearchModal cRef={searchModal} {...props}/>
 

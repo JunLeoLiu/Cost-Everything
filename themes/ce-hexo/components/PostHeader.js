@@ -27,15 +27,6 @@ export default function PostHeader({ post, siteInfo }) {
             className="absolute top-0 w-full h-40 py-10 flex justify-center items-center ">
 
         <div className='mt-10'>
-            <div className='mb-3 flex justify-center'>
-              {post.category && <>
-                <Link href={`/category/${post.category}`} passHref legacyBehavior>
-                  <div className="cursor-pointer px-2 py-1 mb-2 border rounded-sm dark:border-white text-sm font-medium hover:underline duration-200 shadow-text-md text-white">
-                    {post.category}
-                  </div>
-                </Link>
-              </>}
-            </div>
 
           {/* 文章Title */}
           <div className="leading-snug font-bold xs:text-4xl sm:text-4xl md:text-5xl md:leading-snug text-4xl shadow-text-md flex justify-center text-center text-white">

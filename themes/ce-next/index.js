@@ -118,13 +118,6 @@ const LayoutBase = (props) => {
                 <TocDrawer post={post} cRef={drawerRight} targetRef={tocRef} />
             </div>}
 
-            {/* 右上角悬浮 */}
-            <div ref={floatButtonGroup} className='right-8 Top-30 lg:right-10 fixed justify-end z-20 '>
-                <div className={(showRightFloat ? 'animate__animated ' : 'hidden') + ' animate__fadeInUp rounded-md glassmorphism justify-center duration-500  animate__faster flex space-x-2 items-center cursor-pointer '}>
-                    <Catalog />
-                </div>
-            </div>
-
             {/* 右下角悬浮 */}
             <div ref={floatButtonGroup} className='right-8 bottom-12 lg:right-2 fixed justify-end z-20 '>
                 <div className={(showRightFloat ? 'animate__animated ' : 'hidden') + ' animate__fadeInUp rounded-md glassmorphism justify-center duration-500  animate__faster flex space-x-2 items-center cursor-pointer '}>
