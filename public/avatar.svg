@@ -1,5 +1,14 @@
-<svg width="3.8rem" height="3.3rem" version="1.1" xmlns="http://www.w3.org/2000/svg">  
-    <rect width="3.8rem" height="3.3rem" fill="#fff"/>  
-    <rect x="0.25rem" y="0.25rem" width="3.3rem" height="2.8rem" stroke="#333" stroke-width="3"/>  
-    <text x="0.5rem" y="1.7rem" font-family="Helvetica Neue" font-size="2rem" font-weight="bold" fill="#000">CE</text>  
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 878.7 595.3" style="enable-background:new 0 0 878.7 595.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#4D4D4D;stroke-width:20;stroke-miterlimit:10;}
+	.st1{fill:none;}
+	.st2{font-family:'Arial-BoldMT';}
+	.st3{font-size:500px;}
+</style>
+<rect x="14" y="14" class="st0" width="850.4" height="566.9"/>
+<rect x="26.6" y="51.3" class="st1" width="825.2" height="492.4"/>
+<text transform="matrix(1 0 0 1 91.9066 480.2185)" class="st2 st3">CE</text>
 </svg>
