@@ -144,9 +144,6 @@ const TopNav = props => {
                         </div>
                     </a>
                 </div>
-                
-                {/* SearchInput component */}
-                <SearchInput {...props} className="mx-auto" style={{ width: '60%' }}/>
 
                 {/* 右侧功能 */}
                 <div className='mr-1 flex justify-end items-center '>
