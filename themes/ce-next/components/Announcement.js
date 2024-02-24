@@ -9,8 +9,8 @@ const Announcement = ({ post, className }) => {
     return <></>
   }
   return <>
-        <div className="text-sm pb-1 px-2 flex flex-nowrap justify-between">
-            <div className="font-light text-gray-600  dark:text-gray-200">
+        <div className="text-xm pb-1 px-2 flex flex-nowrap justify-between">
+            <div className="font-thin text-gray-600  dark:text-gray-200 text-left">
                 <i className="mr-2 fas fa-bullhorn" />{locale.COMMON.ANNOUNCEMENT}
             </div>
         </div>
