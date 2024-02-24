@@ -73,7 +73,7 @@ const LayoutBase = props => {
 
   return (
     <ThemeGlobalHexo.Provider value={{ searchModal }}>
-        <div id='theme-hexo'>
+        <div id='theme-hexo' className={`${siteConfig('FONT_STYLE')} dark:bg-black scroll-smooth`}>
             <Style/>
 
             {/* 顶部导航 */}
@@ -95,7 +95,7 @@ const LayoutBase = props => {
             </Transition>
 
             {/* 主区块 */}
-            <main id="wrapper" className={`${siteConfig('HEXO_HOME_BANNER_ENABLE', null, CONFIG) ? '' : 'pt-16'} bg-hexo-background-gray dark:bg-black w-full py-2 md:px-8 lg:px-24 min-h-screen relative`}>
+            <main id="wrapper" className={`${siteConfig('HEXO_HOME_BANNER_ENABLE', null, CONFIG) ? '' : 'pt-16'} bg-hexo-background-gray dark:bg-black w-full py-8 md:px-8 lg:px-24 min-h-screen relative`}>
                 <div id="container-inner" className={(JSON.parse(siteConfig('LAYOUT_SIDEBAR_REVERSE')) ? 'flex-row-reverse' : '') + ' w-full mx-auto lg:flex lg:space-x-4 justify-center relative z-10'} >
                     <div className={`${className || ''} w-full ${fullWidth ? '' : 'max-w-4xl'} h-full overflow-hidden`}>
 
@@ -225,10 +225,11 @@ const LayoutSlug = props => {
 
   return (
         <>
-            <div className="w-full lg:hover:shadow lg:border rounded-t-xl lg:rounded-xl lg:px-2 lg:py-1 bg-white dark:bg-hexo-black-gray dark:border-black article">
+            <div className="w-full lg:hover:shadow lg:border rounded-t-xl lg:rounded-xl lg:px-2 lg:py-4 bg-white dark:bg-hexo-black-gray dark:border-black article">
                 {lock && <ArticleLock validPassword={validPassword} />}
 
                 {!lock && <div id="article-wrapper" className="overflow-x-auto flex-grow mx-auto md:w-full md:px-5 ">
+
                     <article itemScope itemType="https://schema.org/Movie" className="subpixel-antialiased overflow-y-hidden" >
                         {/* Notion文章主体 */}
                         <section className='px-5 justify-center mx-auto max-w-2xl lg:max-w-full'>
@@ -242,7 +243,10 @@ const LayoutSlug = props => {
                             <ArticleRecommend {...props} />
                             <ArticleAdjacent {...props} />
                         </>}
+
                     </article>
+
+                    <div className='pt-4 border-dashed'></div>
 
                     {/* 评论互动 */}
                     <div className="duration-200 overflow-x-auto bg-white dark:bg-hexo-black-gray px-3">
@@ -254,7 +258,6 @@ const LayoutSlug = props => {
         </>
   )
 }
-
 
 /**
  * 404

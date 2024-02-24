@@ -13,8 +13,6 @@ import { siteConfig } from '@/lib/config'
 import SearchButton from './SearchButton'
 import CONFIG from '../config'
 import { useRouter } from 'next/router'
-import SearchInput from './SearchInput'; // Import the SearchInput component
-
 
 let windowTop = 0
 
@@ -75,9 +73,9 @@ const TopNav = props => {
     }
 
     if (scrollInHeader) {
-      nav && nav.classList.replace('text-black', 'text-black')
+      nav && nav.classList.replace('text-black', 'text-white')
     } else {
-      nav && nav.classList.replace('text-black', 'text-black')
+      nav && nav.classList.replace('text-white', 'text-black')
     }
 
     // 导航栏不在头图里，且页面向下滚动一定程度 隐藏导航栏
@@ -131,37 +129,30 @@ const TopNav = props => {
     </>
 
   return (<div id='top-nav' className='z-40'>
+        <SearchDrawer cRef={searchDrawer} slot={searchDrawerSlot} />
 
         {/* 导航栏 */}
         <div id='sticky-nav' style={{ backdropFilter: 'blur(3px)' }} className={'top-0 duration-300 transition-all  shadow-none fixed bg-none dark:bg-hexo-black-gray dark:text-gray-200 text-black w-full z-20 transform border-transparent dark:border-transparent'}>
             <div className='w-full flex justify-between items-center px-4 py-2'>
                 <div className='flex'>
-                    <a href="/"> {/* 添加的链接 */}
-                        <div className="icon-wrapper" style={{height: '3.3rem', width:'3.8rem', backgroundColor: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <div style={{ height: '2.8rem', width:'3.3rem',border: 'solid 3px #333',display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <span style={{ fontFamily: 'Helvetica Neue',fontSize: '2rem', fontWeight: 'bold', color: '#000'}}>CE</span>
-                            </div>
-                        </div>
-                    </a>
+                    <Logo {...props} />
                 </div>
 
-                {/* SearchInput component */}
-                <SearchInput {...props} className="mx-auto" style={{ width: '60%' }}/>
-                
                 {/* 右侧功能 */}
                 <div className='mr-1 flex justify-end items-center '>
                     <div className='hidden lg:flex'> <MenuListTop {...props} /></div>
                     <div onClick={toggleMenuOpen} className='w-8 justify-center items-center h-8 cursor-pointer flex lg:hidden'>
                         {isOpen ? <i className='fas fa-times' /> : <i className='fas fa-bars' />}
                     </div>
+                    {showSearchButton && <SearchButton />}
                 </div>
             </div>
         </div>
 
-    {/* 折叠侧边栏 */}
-    <SideBarDrawer isOpen={isOpen} onClose={toggleSideBarClose}>
-      <SideBar {...props} />
-    </SideBarDrawer>
+        {/* 折叠侧边栏 */}
+        <SideBarDrawer isOpen={isOpen} onClose={toggleSideBarClose}>
+            <SideBar {...props} />
+        </SideBarDrawer>
     </div>)
 }
 

@@ -13,7 +13,7 @@ export default function SearchButton(props) {
   const { searchModal } = useHexoGlobal()
 
   function handleSearch() {
-    if (false) { //
+    if (siteConfig('ALGOLIA_APP_ID')) {
       searchModal.current.openSearch()
     } else {
       router.push('/search')

@@ -11,7 +11,6 @@ import Announcement from './Announcement'
 import { useGlobal } from '@/lib/global'
 import Live2D from '@/components/Live2D'
 import { siteConfig } from '@/lib/config'
-import Link from 'next/link'
 
 const HexoRecentComments = dynamic(() => import('./HexoRecentComments'))
 const FaceBookPage = dynamic(
@@ -61,23 +60,23 @@ export default function SideRight(props) {
           />
         </Card>
       )}
-
       {showTag && (
         <Card>
           <TagGroups tags={tags} currentTag={currentTag} />
         </Card>
       )}
-
-      <Announcement post={notice}/>
-
       {siteConfig('HEXO_WIDGET_LATEST_POSTS', null, CONFIG) && latestPosts && latestPosts.length > 0 && <Card>
         <LatestPostsGroup {...props} />
       </Card>}
 
+      <Announcement post={notice}/>
+
       {siteConfig('COMMENT_WALINE_SERVER_URL') && siteConfig('COMMENT_WALINE_RECENT') && <HexoRecentComments/>}
 
-      <div className='fixed top-30 right-20'>
-        {post && post.toc && post.toc.length > 1 && <Catalog toc={post.toc} />}
+      <div className='sticky top-20'>
+        {post && post.toc && post.toc.length > 1 && <Card>
+          <Catalog toc={post.toc} />
+        </Card>}
 
         {rightAreaSlot}
         <FaceBookPage/>
