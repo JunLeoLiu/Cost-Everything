@@ -13,6 +13,8 @@ import { siteConfig } from '@/lib/config'
 import SearchButton from './SearchButton'
 import CONFIG from '../config'
 import { useRouter } from 'next/router'
+import SearchInput from './SearchInput'; // Import the SearchInput component
+
 
 let windowTop = 0
 
@@ -129,7 +131,6 @@ const TopNav = props => {
     </>
 
   return (<div id='top-nav' className='z-40'>
-        <SearchDrawer cRef={searchDrawer} slot={searchDrawerSlot} />
 
         {/* 导航栏 */}
         <div id='sticky-nav' style={{ backdropFilter: 'none' }} className={'top-0 duration-300 transition-all  shadow-none fixed bg-transparent dark:bg-hexo-black-gray dark:text-gray-200 text-black w-full z-20 transform border-transparent dark:border-transparent'}>
@@ -144,7 +145,9 @@ const TopNav = props => {
                     </a>
                 </div>
 
-
+                {/* SearchInput component */}
+                <SearchInput {...props} className="mx-auto" style={{ width: '60%' }}/>
+                
                 {/* 右侧功能 */}
                 <div className='mr-1 flex justify-end items-center '>
                     <div className='hidden lg:flex'> <MenuListTop {...props} /></div>
