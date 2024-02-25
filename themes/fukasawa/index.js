@@ -56,8 +56,6 @@ const LayoutBase = (props) => {
 
                 <TopNav {...props} />
 
-                <Catalog toc={post.toc} />
-
                 <div className={(JSON.parse(siteConfig('LAYOUT_SIDEBAR_REVERSE')) ? 'flex-row-reverse' : '') + ' flex'}>
                     {/* 侧边抽屉 */}
                     <AsideLeft {...props} slot={leftAreaSlot} />
