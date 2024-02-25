@@ -32,6 +32,7 @@ import { Style } from './style'
 import replaceSearchResult from '@/components/Mark'
 import { siteConfig } from '@/lib/config'
 import AlgoliaSearchModal from '@/components/AlgoliaSearchModal'
+import Catalog from './components/Catalog'
 
 // 主题全局状态
 const ThemeGlobalHexo = createContext()
@@ -128,6 +129,8 @@ const LayoutBase = props => {
 
             {/* 悬浮菜单 */}
             <RightFloatArea floatSlot={floatSlot} />
+
+            <Catalog toc={post.toc} />
 
             {/* 全文搜索 */}
             <AlgoliaSearchModal cRef={searchModal} {...props}/>

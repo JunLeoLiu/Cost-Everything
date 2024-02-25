@@ -2,7 +2,6 @@
 
 import CONFIG from './config'
 import TopNav from './components/TopNav'
-import Catalog from './components/Catalog'
 import AsideLeft from './components/AsideLeft'
 import { isBrowser } from '@/lib/utils'
 import { useGlobal } from '@/lib/global'
