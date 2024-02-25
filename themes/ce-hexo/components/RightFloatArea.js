@@ -47,9 +47,9 @@ export default function RightFloatArea({ floatSlot }) {
         <JumpToTopButton />
 
         {/* 语言切换部分 */}
-        <div className="text-sm flex items-center group-hover:w-32 transition-all duration-200">
+        <div className="text-sm flex items-center group-hover:w-32 transition-all duration-200 relative">
           <i className="fa-solid fa-language w-5" />
-          <div className='w-0 group-hover:w-24 transition-all duration-200 overflow-hidden'>
+          <div className='w-24 absolute top-7 left-0 bg-white dark:bg-black shadow-md border border-gray-200 dark:border-gray-700 z-50'>
             <label htmlFor="langSelect" className="sr-only">选择语言：</label>
             <select id="langSelect" value={currentLang} onChange={onLangSelectChange} name="languages" className='pl-1 bg-gray-50 dark:bg-black appearance-none outline-none dark:text-white uppercase cursor-pointer'>
               {Object.keys(LANGS)?.map(t => {
