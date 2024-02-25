@@ -3,7 +3,6 @@ import { useCallback, useEffect, useState } from 'react'
 import FloatDarkModeButton from './FloatDarkModeButton'
 import JumpToTopButton from './JumpToTopButton'
 import LANGS from '@/lib/lang' // 导入语言常量
-import React, { useCallback, useEffect, useState } from 'react'
 
 /**
  * 悬浮在右下角的按钮，当页面向下滚动100px时会出现
