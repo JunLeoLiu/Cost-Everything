@@ -26,7 +26,7 @@ export default function FloatDarkModeButton () {
       className={'justify-center items-center w-7 h-7 text-center transform hover:scale-105 duration-200'
       }
     >
-      <i id="darkModeButton" className={`${isDarkMode ? 'fa-light fa-son icon-white' : 'fa-light fa-moon icon-black'} text-xs'}`}/>
+      <i id="darkModeButton" className={`${isDarkMode ? 'fa-light fa-son text-white' : 'fa-light fa-moon text-black'} text-xs'}`}/>
     </div>
   )
 }
