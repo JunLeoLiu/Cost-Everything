@@ -29,10 +29,10 @@ export default function PostHeader({ post, siteInfo }) {
         <div className='mt-10'>
           {/* 文章Title */}
           <div className="leading-snug font-bold xs:text-4xl sm:text-4xl md:text-5xl md:leading-snug text-4xl shadow-text-md flex justify-center text-center text-black dar:text-white">
-            <NotionIcon icon={post.pageIcon} className='text-4xl mx-1' />{post.title}
+            <NotionIcon icon={post.pageIcon} className='text-8xl mx-1' />{post.title}
           </div>
 
-          <section className="flex-wrap shadow-text-md flex text-sm justify-center mt-4 text-black dark:text-white font-light leading-8">
+          <section className="flex-wrap shadow-text-md flex text-sm justify-center mt-3 text-black dark:text-white font-light leading-8">
 
             <div className='flex justify-center dark:text-gray-200 text-opacity-70'>
               {post?.type !== 'Page' && (
