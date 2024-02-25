@@ -21,15 +21,15 @@ export default function PostHeader({ post, siteInfo }) {
   const headerImage = post?.pageCover ? post.pageCover : siteInfo?.pageCover
 
   return (
-    <div id="header" className="w-full h-40 relative md:flex-shrink-0 z-10" >
+    <div id="header" className="w-full h-30 relative md:flex-shrink-0 z-10" >
 
       <header id='article-header-cover'
-            className="absolute top-10 w-full h-40 py-10 flex justify-center items-center ">
+            className="absolute top-10 w-full h-30 py-10 flex justify-center items-center ">
 
         <div className='mt-10'>
           {/* 文章Title */}
           <div className="leading-snug font-bold xs:text-3xl sm:text-3xl md:text-4xl md:leading-snug text-3xl shadow-text-md flex justify-center text-center text-black dar:text-white">
-            <NotionIcon icon={post.pageIcon} className='text-8x1 h-8 w-1 mx-1' />{post.title}
+            <NotionIcon icon={post.pageIcon} className='text-4xl mx-1' />{post.title}
           </div>
 
           <section className="flex-wrap shadow-text-md flex text-sm justify-center mt-3 text-black dark:text-white font-light leading-8">
