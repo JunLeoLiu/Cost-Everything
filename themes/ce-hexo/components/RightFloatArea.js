@@ -52,7 +52,7 @@ export default function RightFloatArea({ floatSlot }) {
             <i className="fa-solid fa-language w-5" />
           </div>
           {showLanguageMenu && (
-            <div className='w-24 absolute top-7 left-0 bg-white dark:bg-black shadow-md border border-gray-200 dark:border-gray-700 z-50'>
+            <div className='absolute top-7 right-0 bg-white dark:bg-black shadow-md border border-gray-200 dark:border-gray-700 z-50'>
               <label htmlFor="langSelect" className="sr-only">选择语言：</label>
               <select id="langSelect" value={currentLang} onChange={onLangSelectChange} name="languages" className='pl-1 bg-gray-50 dark:bg-black appearance-none outline-none dark:text-white uppercase cursor-pointer'>
                 {Object.keys(LANGS)?.map(t => {
