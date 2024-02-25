@@ -2,6 +2,7 @@
 
 import CONFIG from './config'
 import TopNav from './components/TopNav'
+import Catalog from './components/Catalog'
 import AsideLeft from './components/AsideLeft'
 import { isBrowser } from '@/lib/utils'
 import { useGlobal } from '@/lib/global'
@@ -54,6 +55,8 @@ const LayoutBase = (props) => {
                 <Style/>
 
                 <TopNav {...props} />
+
+                <Catalog toc={post.toc} />
 
                 <div className={(JSON.parse(siteConfig('LAYOUT_SIDEBAR_REVERSE')) ? 'flex-row-reverse' : '') + ' flex'}>
                     {/* 侧边抽屉 */}
