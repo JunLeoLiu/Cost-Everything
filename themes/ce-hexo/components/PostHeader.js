@@ -37,14 +37,9 @@ export default function PostHeader({ post, siteInfo }) {
             <div className='flex justify-center dark:text-gray-200 text-opacity-70'>
               {post?.type !== 'Page' && (
                 <>
-                  <Link
-                    href={`/archive#${formatDateFmt(post?.publishDate, 'yyyy-MM')}`}
-                    passHref
-                    className="pl-1 mr-2 cursor-pointer hover:underline">
-
+                  <span>
                     {locale.COMMON.POST_TIME}: {post?.publishDay}
-
-                  </Link>
+                  </span>
                 </>
               )}
               <div className="pl-1 mr-2">
