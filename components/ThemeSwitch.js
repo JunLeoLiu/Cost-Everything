@@ -58,18 +58,6 @@ const ThemeSwitch = () => {
                     </div>
                 </div>
 
-                {/* 主题切换按钮 */}
-                <div className="text-sm flex items-center group-hover:w-32 transition-all duration-200">
-                    <i className="fa-solid fa-palette w-5" />
-                    <div className='w-0 group-hover:w-24 transition-all duration-200 overflow-hidden'>
-                        <label htmlFor="themeSelect" className="sr-only">选择主题：</label>
-                        <select id="themeSelect" value={currentTheme} onChange={onThemeSelectChange} name="themes" className='pl-1 bg-gray-50 dark:bg-black appearance-none outline-none dark:text-white uppercase cursor-pointer'>
-                            {THEMES?.map(t => {
-                              return <option key={t} value={t}>{t}</option>
-                            })}
-                        </select>
-                    </div>
-                </div>
             </div>
         </Draggable>
 
