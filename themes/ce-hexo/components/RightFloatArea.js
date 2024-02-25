@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 import FloatDarkModeButton from './FloatDarkModeButton'
 import JumpToTopButton from './JumpToTopButton'
 import LANGS from '@/lib/lang' // 导入语言常量
+import React, { useCallback, useEffect, useState } from 'react'
 
 /**
  * 悬浮在右下角的按钮，当页面向下滚动100px时会出现
@@ -11,6 +12,7 @@ import LANGS from '@/lib/lang' // 导入语言常量
  */
 export default function RightFloatArea({ floatSlot }) {
   const [showFloatButton, switchShow] = useState(false)
+    const [showLanguageMenu, setShowLanguageMenu] = useState(false) // 新增状态控制语言选择下拉菜单的显示与隐藏
   const [currentLang, setCurrentLang] = useState('en') // 设置默认语言状态为英语
   const scrollListener = useCallback(throttle(() => {
     const targetRef = document.getElementById('wrapper')
@@ -47,12 +49,12 @@ export default function RightFloatArea({ floatSlot }) {
         <JumpToTopButton />
 
         {/* 语言切换部分 */}
-        <div className="text-sm flex items-center relative">
+        <div className="text-sm flex items-center group-hover:w-32 transition-all duration-200 relative">
           <div className="group cursor-pointer" onClick={() => setShowLanguageMenu(!showLanguageMenu)}>
             <i className="fa-solid fa-language w-5" />
           </div>
           {showLanguageMenu && (
-            <div className='absolute top-7 right-0 bg-white dark:bg-black shadow-md border border-gray-200 dark:border-gray-700 z-50'>
+            <div className='w-24 absolute top-7 left-0 bg-white dark:bg-black shadow-md border border-gray-200 dark:border-gray-700 z-50'>
               <label htmlFor="langSelect" className="sr-only">选择语言：</label>
               <select id="langSelect" value={currentLang} onChange={onLangSelectChange} name="languages" className='pl-1 bg-gray-50 dark:bg-black appearance-none outline-none dark:text-white uppercase cursor-pointer'>
                 {Object.keys(LANGS)?.map(t => {
