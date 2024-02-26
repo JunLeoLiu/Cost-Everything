@@ -28,7 +28,7 @@ export default function ArticleCopyright () {
         <li>
         <li>
           <strong className='mr-2'>联系:</strong>
-          <div>CE@costeverything.com</div>
+          {<div>CE@costeverything.com</div>}
         </li>
         <li></li>
         <strong className='mr-2'>{locale.COMMON.URL}:</strong>
