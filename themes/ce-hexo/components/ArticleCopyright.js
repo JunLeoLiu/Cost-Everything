@@ -26,6 +26,11 @@ export default function ArticleCopyright () {
           {siteConfig('AUTHOR')}
         </li>
         <li>
+        <li>
+          <strong className='mr-2'>联系:</strong>
+          <div>CE@costeverything.com</div>
+        </li>
+        <li></li>
         <strong className='mr-2'>{locale.COMMON.URL}:</strong>
           <a className="whitespace-normal break-words hover:underline" href={path}>
             {path}
