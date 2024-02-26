@@ -16,12 +16,6 @@ export default async function replaceSearchResult({ doms, search, target }) {
         const re = new RegExp(search, 'gim')
         const instance = new Mark(container)
         instance.markRegExp(re, target)
-
-        // Add summaries to each result
-        for (const summary of summaries) {
-          container.appendChild(document.createElement('p')).textContent = summary;
-          
-        }
       }
     } else {
       const re = new RegExp(search, 'gim')
