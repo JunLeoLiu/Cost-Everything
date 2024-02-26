@@ -72,6 +72,9 @@ const LayoutBase = props => {
   // Algolia搜索框
   const searchModal = useRef(null)
 
+    // 检查屏幕宽度，是否在 PC 端
+    const isDesktop = isBrowser && window.innerWidth > 1024;
+
   return (
     <ThemeGlobalHexo.Provider value={{ searchModal }}>
         <div id='theme-hexo' className={`${siteConfig('FONT_STYLE')} dark:bg-black scroll-smooth`}>
@@ -118,10 +121,12 @@ const LayoutBase = props => {
                         </Transition>
                     </div>
 
-                    {/* 添加Catalog组件 */}
-                    <div className="catalog-wrapper">
-                      <Catalog toc={post?.toc} />
-                    </div>
+                    {/* 添加Catalog组件 - 只在 PC 端显示 */}
+                    {isDesktop && (
+                      <div className="catalog-wrapper">
+                        <Catalog toc={post?.toc} />
+                      </div>
+                    )}
                     
                     {/* 右侧栏 */}
                     <SideRight {...props} className={`space-y-4 lg:w-80 pt-4 ${post ? 'lg:pt-0' : 'lg:pt-4'}`} />
