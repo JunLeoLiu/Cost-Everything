@@ -96,7 +96,9 @@ const LayoutBase = props => {
             </Transition>
 
             {/* 添加Catalog组件 */}
-            <Catalog toc={post?.toc} /> {/* Adjust the props as per your requirement */}
+            <div className="catalog-wrapper">
+              <Catalog toc={post?.toc} />
+            </div>
 
             {/* 主区块 */}
             <main id="wrapper" className={`${siteConfig('HEXO_HOME_BANNER_ENABLE', null, CONFIG) ? '' : 'pt-16'} bg-hexo-background-gray dark:bg-black w-full py-8 md:px-8 lg:px-24 min-h-screen relative`}>
