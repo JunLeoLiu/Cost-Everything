@@ -24,8 +24,8 @@ export function InfoCard(props) {
       </div>
       <br></br>
       <div className='font-medium text-center text-xl pb-4'>{siteConfig('AUTHOR')}</div>
-      <div className='text-sm text-center'>邮件: CE@costeverything.com</div>
       <div className='text-sm text-center'>{siteConfig('BIO')}</div>
+      <div className='text-sm text-center'>邮件: CE@costeverything.com</div>
       <MenuGroupCard {...props} />
       <SocialButton />
     </Card>
