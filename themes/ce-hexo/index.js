@@ -116,14 +116,11 @@ const LayoutBase = props => {
 
                             {children}
                         </Transition>
-
-                        {/* 添加Catalog组件 */}
-                        <div className="catalog-wrapper">
-                          <Catalog toc={post?.toc} />
-                        </div>
-
                     </div>
-
+                    {/* 添加Catalog组件 */}
+                    <div className="catalog-wrapper">
+                      <Catalog toc={post?.toc} />
+                    </div>
                     {/* 右侧栏 */}
                     <SideRight {...props} className={`space-y-4 lg:w-80 pt-4 ${post ? 'lg:pt-0' : 'lg:pt-4'}`} />
                 </div>
