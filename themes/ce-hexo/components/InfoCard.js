@@ -22,7 +22,9 @@ export function InfoCard(props) {
           </div>
         </a>
       </div>
+      <></>
       <div className='font-medium text-center text-xl pb-4'>{siteConfig('AUTHOR')}</div>
+      <></>
       <div className='text-sm text-center'>{siteConfig('BIO')}</div>
       <MenuGroupCard {...props} />
       <SocialButton />
