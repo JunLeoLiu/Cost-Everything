@@ -95,11 +95,6 @@ const LayoutBase = props => {
                 {headerSlot}
             </Transition>
 
-            {/* 添加Catalog组件 */}
-            <div className="catalog-wrapper">
-              <Catalog toc={post?.toc} />
-            </div>
-
             {/* 主区块 */}
             <main id="wrapper" className={`${siteConfig('HEXO_HOME_BANNER_ENABLE', null, CONFIG) ? '' : 'pt-16'} bg-hexo-background-gray dark:bg-black w-full py-8 md:px-8 lg:px-24 min-h-screen relative`}>
                 <div id="container-inner" className={(JSON.parse(siteConfig('LAYOUT_SIDEBAR_REVERSE')) ? 'flex-row-reverse' : '') + ' w-full mx-auto lg:flex lg:space-x-4 justify-center relative z-10'} >
@@ -121,6 +116,12 @@ const LayoutBase = props => {
 
                             {children}
                         </Transition>
+
+                        {/* 添加Catalog组件 */}
+                        <div className="catalog-wrapper">
+                          <Catalog toc={post?.toc} />
+                        </div>
+
                     </div>
 
                     {/* 右侧栏 */}
