@@ -71,7 +71,7 @@ export const BlogPostCardInfo = ({ post, showPreview, showPageCover, showSummary
         </header>
 
         {/* 摘要 */}
-        {(!showPreview || showSummary) && !post.results && (
+        {(!showPreview || showSummary) && (
           <main className="line-clamp-2 replace my-3 text-gray-700  dark:text-gray-300 text-sm font-light leading-7">
             {post.summary}
           </main>
