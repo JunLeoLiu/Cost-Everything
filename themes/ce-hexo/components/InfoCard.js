@@ -23,9 +23,9 @@ export function InfoCard(props) {
         </a>
       </div>
       <div className='font-medium text-center text-xl pb-4'>{siteConfig('AUTHOR')}</div>
-      <div className='text-sm text-center' style={{ marginBottom: '10px' }}>{siteConfig('BIO')}</div>
-      <div className='text-sm text-center' style={{ marginBottom: '10px' }}>E-mail: CE@costeverything.com</div>
-      <div className='text-sm text-center' style={{ marginBottom: '10px' }}>www.costeverything.com</div>
+      <div className='text-sm text-center' style={{ marginBottom: '5px' }}>{siteConfig('BIO')}</div>
+      <div className='text-sm text-center' style={{ marginBottom: '5px' }}>E-mail: CE@costeverything.com</div>
+      <div className='text-sm text-center' style={{ marginBottom: '5px' }}>www.costeverything.com</div>
       <MenuGroupCard {...props} />
       <SocialButton />
     </Card>
