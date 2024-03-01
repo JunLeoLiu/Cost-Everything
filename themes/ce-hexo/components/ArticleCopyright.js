@@ -27,7 +27,7 @@ export default function ArticleCopyright () {
         </li>
         <li>
         <li>
-          <strong className='mr-2'>联系:</strong>
+          <strong className='mr-2'>E-mail: </strong>
           <span>CE@costeverything.com</span>
         </li>
         <li></li>
