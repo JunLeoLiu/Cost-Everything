@@ -124,7 +124,7 @@ const LayoutBase = props => {
                     {/* 添加Catalog组件 - 只在 PC 端显示 */}
                     {isDesktop && (
                       <div className="catalog-wrapper">
-                        <Catalog/>
+                        <Catalog toc={post?.toc} />
                       </div>
                     )}
                     
