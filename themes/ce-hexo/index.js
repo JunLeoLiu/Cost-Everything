@@ -238,12 +238,18 @@ const LayoutSlug = props => {
         <>
             <div className="w-full lg:hover:shadow lg:border rounded-t-xl lg:rounded-xl lg:px-2 lg:py-4 bg-white dark:bg-hexo-black-gray dark:border-black article">
                 {lock && <ArticleLock validPassword={validPassword} />}
-                {/* 添加目录组件 */}
-                <Catalog toc={post?.toc} />
 
                 {!lock && <div id="article-wrapper" className="overflow-x-auto flex-grow mx-auto md:w-full md:px-5 ">
 
                     <article itemScope itemType="https://schema.org/Movie" className="subpixel-antialiased overflow-y-hidden" >
+                      
+                        {/* 添加Catalog组件 - 只在 PC 端显示 */}
+                        {isDesktop && (
+                          <div className="catalog-wrapper">
+                            <Catalog toc={post?.toc} />
+                          </div>
+                        )}
+
                         {/* Notion文章主体 */}
                         <section className='px-5 justify-center mx-auto max-w-2xl lg:max-w-full'>
                             {post && <NotionPage post={post} />}
